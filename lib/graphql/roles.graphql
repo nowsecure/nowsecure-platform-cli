@@ -1,0 +1,9 @@
+query roles {
+  my {
+    organization {
+      roles {
+        ...RoleFields
+      }
+    }
+  }
+}

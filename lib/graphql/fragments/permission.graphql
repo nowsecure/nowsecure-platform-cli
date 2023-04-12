@@ -1,0 +1,7 @@
+fragment PermissionFields on Permission {
+  ref
+  label
+  privileges
+  createdAt
+  updatedAt
+}

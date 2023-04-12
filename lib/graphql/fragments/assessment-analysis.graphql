@@ -1,0 +1,15 @@
+fragment AssessmentAnalysisFields on AutoAssessmentAnalysis {
+  task {
+    dynamic {
+      ...JobFields
+    }
+    static {
+      ...JobFields
+    }
+  }
+  status
+  isRunning
+  isComplete
+  isCancelled
+  errorCode
+}

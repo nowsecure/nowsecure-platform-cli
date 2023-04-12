@@ -1,0 +1,31 @@
+valid:
+  fingerprint-false:
+    fingerprint: false
+  fingerprint-true:
+    fingerprint: true
+  package-false:
+    package: false
+  package-true:
+    package: true
+  platform-false:
+    platform: false
+  platform-true:
+    platform: true
+  v1-key:
+    v1-key: ios com.example.app
+type-errors:
+  fingerprint:
+    fingerprint: 0
+  package:
+    package: 0
+  platform:
+    platform: 0
+  v1-key:
+    v1-key: 0
+value-errors:
+  platform:
+    v1-key: wrong com.example.app
+  too-few:
+    v1-key: ios
+  too-many:
+    v1-key: ios com.example.app extra

@@ -1,0 +1,15 @@
+fragment InvitationFields on UserInvitation {
+  ref
+  name
+  email
+  expiredAt
+  role {
+    ref
+    name
+    label
+  }
+  groups {
+    ref
+    name
+  }
+}

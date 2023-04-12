@@ -1,0 +1,35 @@
+mutation createInvitation(
+  $name: String!
+  $email: String!
+  $roleName: String!
+  $groupRefs: [UUID!]!
+) {
+  organization {
+    createUserInvitation(
+      name: $name
+      email: $email
+      roleName: $roleName
+      groupRefs: $groupRefs
+    ) {
+      ...InvitationFields
+    }
+  }
+}
+
+mutation revokeInvitation($ref: UUID!) {
+  organization {
+    revokeUserInvitation(ref: $ref) {
+      ref
+    }
+  }
+}
+
+query invitations {
+  my {
+    organization {
+      invitations {
+        ...InvitationFields
+      }
+    }
+  }
+}

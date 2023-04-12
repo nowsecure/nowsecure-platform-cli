@@ -1,0 +1,43 @@
+{
+  "platformType": "android",
+  "packageKey": "com.example.android",
+  "taskId": "1",
+  "buildVersion": "1.0.0",
+  "isAppstoreDownload": false,
+  "groupRef": "00000000-0000-0000-0000-000000000002",
+  "createdAt": "2022-12-08T13:59:11.946Z",
+  "applicationRef": "00000000-0000-0000-0000-000000000000",
+  "ref": "00000000-0000-0000-0000-000000000001",
+  "report": {
+    "findings": [
+      {
+        "kind": "static",
+        "key": "example_check",
+        "checkId": "example_check",
+        "category": "network",
+        "title": "This Is An Example Check",
+        "summary": "This check is an example check.",
+        "affected": true,
+        "severity": "medium",
+        "impactType": "medium",
+        "context": null,
+        "cvss": 10,
+        "cvssVector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
+        "check": {
+          "issue": {
+            "title": "Example",
+            "description": "This is a descriptive explanation of the example check.",
+            "impactSummary": "This is the impact of the example check.",
+            "stepsToReproduce": "These are steps to reproduce the issue.",
+            "recommendation": "This is an example recommendation.",
+            "category": null,
+            "cvss": 10,
+            "cvssVector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N",
+            "codeSamples": [],
+            "guidanceLinks": []
+          }
+        }
+      }
+    ]
+  }
+}

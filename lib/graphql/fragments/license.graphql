@@ -1,0 +1,13 @@
+fragment LicenseFields on MyQuery {
+  user {
+    organization {
+      usage {
+        assessment {
+          limit
+          reached
+          total
+        }
+      }
+    }
+  }
+}

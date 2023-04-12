@@ -1,0 +1,36 @@
+{
+  "name": "@nowsecure/platform-lib-monorepo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "NowSecure",
+  "scripts": {
+    "deps:lib": "cd lib && yarn install --frozen-lockfile --prod",
+    "deps:sarif": "cd sarif && yarn install --frozen-lockfile --prod",
+    "deps:github-snapshot": "cd github-snapshot && yarn install --frozen-lockfile --prod",
+    "deps:cli": "cd cli && yarn install --frozen-lockfile --prod",
+    "deps": "yarn run deps:lib && yarn run deps:sarif && yarn run deps:github-snapshot && yarn run deps:cli",
+    "deps:dev:lib": "cd lib && yarn install --frozen-lockfile",
+    "deps:dev:sarif": "cd sarif && yarn install --frozen-lockfile",
+    "deps:dev:github-snapshot": "cd github-snapshot && yarn install --frozen-lockfile",
+    "deps:dev:cli": "cd cli && yarn install --frozen-lockfile",
+    "deps:dev": "yarn run deps:dev:lib && yarn run deps:dev:sarif && yarn run deps:dev:github-snapshot && yarn run deps:dev:cli",
+    "link:lib": "cd lib && yarn unlink || true && yarn link",
+    "link:sarif": "cd sarif && yarn unlink || true && yarn link",
+    "link:github-snapshot": "cd github-snapshot && yarn unlink || true && yarn link",
+    "link": "yarn run link:lib && yarn run link:sarif && yarn run link:github-snapshot",
+    "build:lib": "yarn run deps:dev:lib && cd lib && yarn run build",
+    "build:sarif": "yarn run deps:dev:sarif && yarn run link:lib && cd sarif && yarn link @nowsecure/platform-lib && yarn run build",
+    "build:github-snapshot": "yarn run deps:dev:github-snapshot && yarn run link:lib && cd github-snapshot && yarn link @nowsecure/platform-lib && yarn run build",
+    "build:cli": "yarn run deps:dev:cli && yarn run link && cd cli && yarn run link-deps && yarn run build",
+    "build": "yarn run deps:dev && yarn run build:lib && yarn run build:sarif && yarn run build:github-snapshot && yarn run build:cli",
+    "clean:lib": "cd lib && yarn run clean",
+    "clean:sarif": "cd sarif && yarn run clean",
+    "clean:github-snapshot": "cd github-snapshot && yarn run clean",
+    "clean:cli": "cd cli && yarn run clean",
+    "clean": "yarn run clean:cli && yarn run clean:sarif && yarn run clean:github-snapshot && yarn run clean:lib",
+    "make-package": "yarn run deps:dev && yarn run link && yarn run clean && yarn --cwd cli run link-deps && yarn --cwd cli run make-package"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

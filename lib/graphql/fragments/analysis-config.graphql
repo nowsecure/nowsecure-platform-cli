@@ -1,0 +1,44 @@
+fragment DefaultAnalysisConfigFields on AnalysisConfigEntry {
+  searchData {
+    key
+    value
+    searchStrings
+    nonSensitive
+  }
+  actions {
+    find
+    avoid
+  }
+}
+
+fragment AppAnalysisConfigFields on AnalysisConfigEntry {
+  searchTerms {
+    name
+    value
+    searchStrings
+  }
+  searchData {
+    key
+    value
+    searchStrings
+    nonSensitive
+  }
+  actions {
+    find
+    avoid
+  }
+  xctest {
+    functionName
+    runnerFilename
+  }
+  appium {
+    archiveFilename
+    runnerFilename
+    interpreter
+    setupCommand
+    code
+  }
+  jsScript
+  dslScript
+  dslScriptFilename
+}

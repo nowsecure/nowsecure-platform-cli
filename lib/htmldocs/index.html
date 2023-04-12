@@ -1,0 +1,2880 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the NowSecure Platform API library"
+        >
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-61abaf50.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-1b920087.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;tsx&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-02a52ce4.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="tsx">tsx</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="API">API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#application-apis" class="toc-h2 toc-link" data-title="Application APIs">Application APIs</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#archiveapp" class="toc-h3 toc-link" data-title="archiveApp">archiveApp</a>
+                          </li>
+                          <li>
+                            <a href="#getanalysisconfig" class="toc-h3 toc-link" data-title="getAnalysisConfig">getAnalysisConfig</a>
+                          </li>
+                          <li>
+                            <a href="#updateanalysisconfig" class="toc-h3 toc-link" data-title="updateAnalysisConfig">updateAnalysisConfig</a>
+                          </li>
+                          <li>
+                            <a href="#resetanalysisconfig" class="toc-h3 toc-link" data-title="resetAnalysisConfig">resetAnalysisConfig</a>
+                          </li>
+                          <li>
+                            <a href="#createapp" class="toc-h3 toc-link" data-title="createApp">createApp</a>
+                          </li>
+                          <li>
+                            <a href="#listapplications" class="toc-h3 toc-link" data-title="listApplications">listApplications</a>
+                          </li>
+                          <li>
+                            <a href="#processbinary" class="toc-h3 toc-link" data-title="processBinary">processBinary</a>
+                          </li>
+                          <li>
+                            <a href="#processbinary" class="toc-h3 toc-link" data-title="processBinary">processBinary</a>
+                          </li>
+                          <li>
+                            <a href="#getappvulnerabilities" class="toc-h3 toc-link" data-title="getAppVulnerabilities">getAppVulnerabilities</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#assessment-apis" class="toc-h2 toc-link" data-title="Assessment APIs">Assessment APIs</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#listassessments" class="toc-h3 toc-link" data-title="listAssessments">listAssessments</a>
+                          </li>
+                          <li>
+                            <a href="#fetchassessment" class="toc-h3 toc-link" data-title="fetchAssessment">fetchAssessment</a>
+                          </li>
+                          <li>
+                            <a href="#pollforreport" class="toc-h3 toc-link" data-title="pollForReport">pollForReport</a>
+                          </li>
+                          <li>
+                            <a href="#rawassessmentdata" class="toc-h3 toc-link" data-title="rawAssessmentData">rawAssessmentData</a>
+                          </li>
+                          <li>
+                            <a href="#islicensevalid" class="toc-h3 toc-link" data-title="isLicenseValid">isLicenseValid</a>
+                          </li>
+                          <li>
+                            <a href="#startassessment" class="toc-h3 toc-link" data-title="startAssessment">startAssessment</a>
+                          </li>
+                          <li>
+                            <a href="#cancelassessment" class="toc-h3 toc-link" data-title="cancelAssessment">cancelAssessment</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#organization-apis" class="toc-h2 toc-link" data-title="Organization APIs">Organization APIs</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#orggroups" class="toc-h3 toc-link" data-title="orgGroups">orgGroups</a>
+                          </li>
+                          <li>
+                            <a href="#listinvitations" class="toc-h3 toc-link" data-title="listInvitations">listInvitations</a>
+                          </li>
+                          <li>
+                            <a href="#inviteuser" class="toc-h3 toc-link" data-title="inviteUser">inviteUser</a>
+                          </li>
+                          <li>
+                            <a href="#revokeinvitation" class="toc-h3 toc-link" data-title="revokeInvitation">revokeInvitation</a>
+                          </li>
+                          <li>
+                            <a href="#listroles" class="toc-h3 toc-link" data-title="listRoles">listRoles</a>
+                          </li>
+                          <li>
+                            <a href="#orgusers" class="toc-h3 toc-link" data-title="orgUsers">orgUsers</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#user-apis" class="toc-h2 toc-link" data-title="User APIs">User APIs</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#usergroups" class="toc-h3 toc-link" data-title="userGroups">userGroups</a>
+                          </li>
+                          <li>
+                            <a href="#userinfo" class="toc-h3 toc-link" data-title="userInfo">userInfo</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#types-and-interfaces" class="toc-h1 toc-link" data-title="Types and Interfaces">Types and Interfaces</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#appresource" class="toc-h2 toc-link" data-title="AppResource">AppResource</a>
+                  </li>
+                  <li>
+                    <a href="#appanalysisconfig" class="toc-h2 toc-link" data-title="AppAnalysisConfig">AppAnalysisConfig</a>
+                  </li>
+                  <li>
+                    <a href="#assessment" class="toc-h2 toc-link" data-title="Assessment">Assessment</a>
+                  </li>
+                  <li>
+                    <a href="#autoassessmentanalysis" class="toc-h2 toc-link" data-title="AutoAssessmentAnalysis">AutoAssessmentAnalysis</a>
+                  </li>
+                  <li>
+                    <a href="#assessmentsections" class="toc-h2 toc-link" data-title="AssessmentSections">AssessmentSections</a>
+                  </li>
+                  <li>
+                    <a href="#autobuild" class="toc-h2 toc-link" data-title="AutoBuild">AutoBuild</a>
+                  </li>
+                  <li>
+                    <a href="#filter" class="toc-h2 toc-link" data-title="Filter">Filter</a>
+                  </li>
+                  <li>
+                    <a href="#finding" class="toc-h2 toc-link" data-title="Finding">Finding</a>
+                  </li>
+                  <li>
+                    <a href="#group" class="toc-h2 toc-link" data-title="Group">Group</a>
+                  </li>
+                  <li>
+                    <a href="#invitation" class="toc-h2 toc-link" data-title="Invitation">Invitation</a>
+                  </li>
+                  <li>
+                    <a href="#user" class="toc-h2 toc-link" data-title="User">User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#support-classes" class="toc-h1 toc-link" data-title="Support classes">Support classes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#nowsecureclient" class="toc-h2 toc-link" data-title="NowSecureClient">NowSecureClient</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#constructor" class="toc-h3 toc-link" data-title="constructor">constructor</a>
+                          </li>
+                          <li>
+                            <a href="#async-query-query-variables-ignoregqlerrors-config" class="toc-h3 toc-link" data-title="async query(query, variables, ignoreGQLErrors, config)">async query(query, variables, ignoreGQLErrors, config)</a>
+                          </li>
+                          <li>
+                            <a href="#async-mutation-query-variables-ignoregqlerrors-config" class="toc-h3 toc-link" data-title="async mutation(query, variables, ignoreGQLErrors, config)">async mutation(query, variables, ignoreGQLErrors, config)</a>
+                          </li>
+                          <li>
+                            <a href="#get-path-config" class="toc-h3 toc-link" data-title="get(path, config)">get(path, config)</a>
+                          </li>
+                          <li>
+                            <a href="#post-relativeurl-params-config" class="toc-h3 toc-link" data-title="post(relativeUrl, params, config)">post(relativeUrl, params, config)</a>
+                          </li>
+                          <li>
+                            <a href="#poststream-relativeurl-stream-config" class="toc-h3 toc-link" data-title="postStream(relativeUrl, stream, config)">postStream(relativeUrl, stream, config)</a>
+                          </li>
+                          <li>
+                            <a href="#delete-relativeurl-config" class="toc-h3 toc-link" data-title="delete(relativeUrl, config)">delete(relativeUrl, config)</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#requestconfig" class="toc-h2 toc-link" data-title="RequestConfig">RequestConfig</a>
+                  </li>
+                  <li>
+                    <a href="#platform" class="toc-h2 toc-link" data-title="Platform">Platform</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#constructor-client-nowsecureclient" class="toc-h3 toc-link" data-title="constructor(client: NowSecureClient)">constructor(client: NowSecureClient)</a>
+                          </li>
+                          <li>
+                            <a href="#methods" class="toc-h3 toc-link" data-title="methods">methods</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='api'>API</h1><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="k">import</span> <span class="p">{</span><span class="nx">NowSecureClient</span><span class="p">,</span> <span class="nx">Platform</span><span class="p">,</span> <span class="nx">PlatformConfig</span><span class="p">,</span> <span class="nx">userGroups</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@nowsecure/platform-lib</span><span class="dl">"</span>
+
+<span class="kd">const</span> <span class="nx">platformConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PlatformConfig</span><span class="p">(</span><span class="dl">"</span><span class="s2">My Api Token</span><span class="dl">"</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NowSecureClient</span><span class="p">(</span><span class="nx">platformConfig</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">platform</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">Platform</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="dl">"</span><span class="s2">Function vs methods</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="nx">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">Function calls and Platform methods are equivalent</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">fromFunction</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">userGroups</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">fromMethod</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">platform</span><span class="p">.</span><span class="nx">userGroups</span><span class="p">()</span>
+
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">fromFunction</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">fromMethod</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p>API functions can be referenced either as stand-alone functions taking a <a href="#nowsecureclient">NowSecureClient</a>
+instance or by constructing an instance of the <a href="#platform">Platform</a> class passing a <a href="#nowsecureclient">NowSecureClient</a> to the constructor and calling the equivalent method.</p>
+<h2 id='application-apis'>Application APIs</h2>
+<p>API calls to query and manipulate applications uploaded to Platform for analysis.</p>
+<h3 id='archiveapp'>archiveApp</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformApi</span> <span class="p">{</span>
+  <span class="nx">archiveApp</span><span class="p">(</span><span class="nx">appRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">unarchive</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AppResource</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Archives or unarchives an application. Archiving an already archived application is not an error.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>appRef</td>
+<td>Reference (UUID) of the application to archive</td>
+</tr>
+<tr>
+<td>unarchive</td>
+<td>Unarchive the application</td>
+</tr>
+</tbody></table>
+
+<p>Returns a promise resolving to an <a href="#appresource"><code>AppResource</code></a> object</p>
+<h3 id='getanalysisconfig'>getAnalysisConfig</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformApi</span> <span class="p">{</span>
+  <span class="nx">getAnalysisConfig</span><span class="p">(</span><span class="nx">appRef</span><span class="p">?:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AppAnalysisConfig</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Return either the current analysis configuration for the specified app or the default configuration</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>appRef</td>
+<td>Reference (UUID) of the application. If this value is falsy the default configuration is retrieved</td>
+</tr>
+</tbody></table>
+
+<p>Returns a promise resolving to an <a href="#appanalysisconfig">AppAnalysisConfig</a> object</p>
+<h3 id='updateanalysisconfig'>updateAnalysisConfig</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">updateAnalysisConfig</span><span class="p">(</span>
+    <span class="nx">appRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">runnerType</span><span class="p">?:</span> <span class="nx">RunnerType</span><span class="p">,</span>
+    <span class="nx">runnerFile</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">update</span><span class="p">?:</span> <span class="nx">UpdateConfigOptions</span><span class="p">,</span>
+    <span class="nx">mergeSearchTerms</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">,</span>
+    <span class="nx">requestConfig</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">UpdateSearchDataInput</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">value</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">searchStrings</span><span class="p">?:</span> <span class="kr">string</span><span class="p">[];</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">UpdateSearchTermInput</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">searchStrings</span><span class="p">?:</span> <span class="kr">string</span><span class="p">[];</span>
+  <span class="nl">value</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">UpdateConfigOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">appium</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="nx">archiveFilename</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">interpreter</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">runnerFilename</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">setupCommand</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">xctest</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="nx">functionName</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">runnerFilename</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nl">actions</span><span class="p">?:</span> <span class="nb">Partial</span><span class="o">&lt;</span><span class="nx">AnalysisConfigActionsEntry</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nl">searchData</span><span class="p">?:</span> <span class="nx">UpdateSearchDataInput</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">searchTerms</span><span class="p">?:</span> <span class="nx">UpdateSearchTermInput</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Update the analysis configuration for an application</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>appRef</td>
+<td>ID of the target application</td>
+</tr>
+<tr>
+<td>runnerType</td>
+<td>Type of the runner to set - one of <code>none</code>, <code>js</code>, <code>xctest</code> or <code>appium</code></td>
+</tr>
+<tr>
+<td>runnerFile</td>
+<td>Path to the runner to upload</td>
+</tr>
+<tr>
+<td>update</td>
+<td>Updates to the existing configuration</td>
+</tr>
+<tr>
+<td>mergeSearchTerms</td>
+<td>Controls whether the searchTerms array overwrites or is merged with existing terms</td>
+</tr>
+<tr>
+<td>requestConfig</td>
+<td><a href="#requestconfig"><code>RequestConfig</code></a> for the operation</td>
+</tr>
+</tbody></table>
+
+<p><strong>Configuring scripts</strong></p>
+
+<p>If the runnerType parameter is <code>none</code> the existing script (if any) will be removed.
+For <code>js</code>, <code>xctest</code> or <code>appium</code> types an appropriate runner file must be passed in runnerFile.</p>
+
+<p><code>appium</code> requires that the update paramater contains values for <code>interpreter</code> (<code>node</code> or <code>python3</code>) and <code>runnerFileName</code> (the entry point) in the <code>appium</code> object.</p>
+
+<p>If the runnerType parameter is undefined the xctest <code>runnerFileName</code>, and appium <code>interpreter</code> and <code>archiveFilename</code> values cannot be changed.</p>
+
+<p><strong>Configuring search terms</strong></p>
+
+<p>Any missing values in the <code>update.searchData</code> list will be filled from the existing configuration. Passing <code>null</code> as the value of <code>update.searchData</code> will reset the terms to their default values.</p>
+
+<p>Passing null for <code>update.searchTerms</code> will remove any existing custom terms.</p>
+
+<p>If <code>mergeSearchTerms</code> is false the list of custom terms in <code>update.searchTerms</code> (if defined) will overwrite the existing custom terms.</p>
+
+<p>If <code>mergeSearchTerms</code> is true the update data is used to update the existing list:</p>
+
+<ul>
+<li>Items that have a <code>null</code> value will be removed from the existing list</li>
+<li>Items with a non-null value will update existing items (if the name matches an existing item) or add a new item.</li>
+</ul>
+
+<p><strong>Configuring Action Strings</strong></p>
+
+<p>Passing null for <code>update.actions</code> will reset the action strings to the system defaults.<br/>
+The find and avoid lists can also be individually reset by passing null for <code>update.actions.find</code> or <code>update.actions.avoid</code></p>
+
+<p>If a non-null value is passed for find or avoid the new list will overwrite the existing settings.</p>
+<h3 id='resetanalysisconfig'>resetAnalysisConfig</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">resetAnalysisConfig</span><span class="p">(</span><span class="nx">appRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Resets all analysis configuration fields for the application to their default values</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>appRef</td>
+<td>ID of the application to reset</td>
+</tr>
+</tbody></table>
+<h3 id='createapp'>createApp</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformApi</span> <span class="p">{</span>
+  <span class="nx">createApp</span><span class="p">(</span>
+    <span class="nx">platform</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">,</span>
+    <span class="nx">packageName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">groupRef</span><span class="p">?:</span> <span class="kr">string</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">AppResource</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Create an application record without uploading an application binary.</p>
+
+<p>A group reference is required if the user is a member of more than one group.</p>
+
+<p>An error will be thrown if the application already exists.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>platform</td>
+<td>The target platform - <code>ios</code> or <code>android</code></td>
+</tr>
+<tr>
+<td>packageName</td>
+<td>The package id, e.g. com.example.app</td>
+</tr>
+<tr>
+<td>groupRef</td>
+<td>If defined, the application will be created in this group</td>
+</tr>
+</tbody></table>
+
+<p>Returns a promise resolving to an <a href="#appresource"><code>AppResource</code></a> object</p>
+<h3 id='listapplications'>listApplications</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">listApplications</span><span class="p">(</span>
+    <span class="nx">options</span><span class="p">?:</span> <span class="nx">ListApplicationOptions</span><span class="p">,</span>
+    <span class="nx">filter</span><span class="p">?:</span> <span class="nx">Filter</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Application</span><span class="p">[]</span><span class="o">&gt;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">ListApplicationOptions</span> <span class="p">{</span>
+  <span class="nl">refs</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">groupRefs</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">string</span><span class="p">[]</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">platformTypes</span><span class="p">?:</span> <span class="nx">PlatformEnum</span> <span class="o">|</span> <span class="nx">PlatformEnum</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">packageKeys</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">string</span><span class="p">[]</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">limit</span><span class="p">?:</span> <span class="kr">number</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">offset</span><span class="p">?:</span> <span class="kr">number</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">reverse</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">lastAssessment</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeDeputy</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeConfig</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeState</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeReport</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeBuild</span><span class="p">?:</span> <span class="nx">boolean</span><span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Application</span> <span class="p">{</span>
+  <span class="nl">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">platformType</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">;</span>
+  <span class="nl">packageKey</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">iconURL</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">createdAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">archivedAt</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">group</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+  <span class="p">};</span>
+  <span class="nl">latestCompleteAssessment</span><span class="p">?:</span> <span class="nx">Assessment</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Returns a list of applications</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>options</td>
+<td>Search and output selection parameters</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Finding filter applied to the last complete assessment (if requested)</td>
+</tr>
+</tbody></table>
+
+<p><code>ListApplicationOptions</code>:</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>refs</td>
+<td>Filter the list by application reference(s)</td>
+</tr>
+<tr>
+<td>groupRefs</td>
+<td>Filter the list by group reference(s). Only applications in the specified groups are returned</td>
+</tr>
+<tr>
+<td>platformTypes</td>
+<td>Filter the list by platform type(s)</td>
+</tr>
+<tr>
+<td>packageKeys</td>
+<td>Filter the list by package name / bundle ID</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Pagination: Maximum number of applications to return</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Pagination: Offset within the returned list</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>Return the list in reverse order</td>
+</tr>
+<tr>
+<td>lastAssessment</td>
+<td>Return the last completed assessment in the returned data</td>
+</tr>
+<tr>
+<td>includeDeputy</td>
+<td>Include Deputy (library dependency) information in the last assessment</td>
+</tr>
+<tr>
+<td>includeConfig</td>
+<td>Include the assessment configuration data</td>
+</tr>
+<tr>
+<td>includeState</td>
+<td>Include the assesment data</td>
+</tr>
+<tr>
+<td>includeReport</td>
+<td>Include the findings report</td>
+</tr>
+<tr>
+<td>includeBuild</td>
+<td>Include the build details</td>
+</tr>
+</tbody></table>
+
+<p><code>Application</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>The application reference ID</td>
+</tr>
+<tr>
+<td>platformType</td>
+<td><code>ios</code> or <code>android</code></td>
+</tr>
+<tr>
+<td>packageKey</td>
+<td>The bundle or package ID</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>Creation date of the application record</td>
+</tr>
+<tr>
+<td>archivedAt</td>
+<td>Date when the application was archived, or null</td>
+</tr>
+<tr>
+<td>group</td>
+<td>The ID and name of the application group</td>
+</tr>
+<tr>
+<td>latestCompleteAssessment</td>
+<td>The last successful <a href="#assessment">Assessment</a></td>
+</tr>
+</tbody></table>
+<h3 id='processbinary'>processBinary</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">processBinary</span><span class="p">(</span>
+    <span class="nx">stream</span><span class="p">:</span> <span class="nx">NodeJS</span><span class="p">.</span><span class="nx">ReadableStream</span><span class="p">,</span>
+    <span class="nx">groupId</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">version</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">config</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ProcessApplicationResponse</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">ProcessApplicationResponse</span> <span class="p">{</span>
+  <span class="nl">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">application</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">group</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">account</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">platform</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">package</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">task</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">creator</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">created</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">binary</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">config</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">static</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">state</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nl">dynamic</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">state</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+  <span class="nl">cancelled</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">task_status</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+  <span class="nl">events</span><span class="p">:</span> <span class="nx">unknown</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Upload an ipa or apk file to Platform and begin an assessment.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>stream</td>
+<td>The application data to send to Platform</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>The application group to use for the assessment. Required if the user is a member of more than one group</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Optional version string for the build. If this field is not specified the version from the application package will be used</td>
+</tr>
+<tr>
+<td>config</td>
+<td><a href="#requestconfig"><code>RequestConfig</code></a>. Upload progress can be monitored via the <code>onUploadProgress</code> callback.</td>
+</tr>
+</tbody></table>
+
+<p><code>ProcessApplicationResponse</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>The ID of the triggered assessment</td>
+</tr>
+<tr>
+<td>application</td>
+<td>ID of the application</td>
+</tr>
+<tr>
+<td>group</td>
+<td>ID of the application group</td>
+</tr>
+<tr>
+<td>account</td>
+<td>historical duplicate of group</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>The platform type (<code>android</code> or <code>ios</code>)</td>
+</tr>
+<tr>
+<td>package</td>
+<td>The package identifier</td>
+</tr>
+<tr>
+<td>task</td>
+<td>The ID of the task running the assessment. Can be used to cancel the assessment</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>ID of the user triggering the assessment</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Timestamp when the assessment was created (ISO DateTime format)</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>Unique ID for this package (SHA-256 hash of the binary)</td>
+</tr>
+<tr>
+<td>config</td>
+<td>The configuration used for this assessment</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of the static and dynamic portions of the assessment</td>
+</tr>
+<tr>
+<td>cancelled</td>
+<td>True if the assessment has been cancelled</td>
+</tr>
+<tr>
+<td>task_status</td>
+<td>Overall status of the assessment</td>
+</tr>
+<tr>
+<td>events</td>
+<td>Events occurring during the assessment</td>
+</tr>
+</tbody></table>
+<h3 id='processbinary'>processBinary</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">uploadBinary</span><span class="p">(</span>
+    <span class="nx">stream</span><span class="p">:</span> <span class="nx">NodeJS</span><span class="p">.</span><span class="nx">ReadableStream</span><span class="p">,</span>
+    <span class="nx">groupId</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">config</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">UploadApplicationResponse</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">UploadApplicationResponse</span> <span class="p">{</span>
+  <span class="nl">digest</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">algorithm</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">analyzed</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">platform</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">;</span>
+  <span class="nl">package</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">version</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">icon</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">downloaded_appstore_application_key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Upload an ipa or apk file to Platform without starting an assessment.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>stream</td>
+<td>The application data to send to Platform</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>The application group to use for the assessment. Required if the user is a member of more than one group</td>
+</tr>
+<tr>
+<td>config</td>
+<td><a href="#requestconfig"><code>RequestConfig</code></a>. Upload progress can be monitored via the <code>onUploadProgress</code> callback.</td>
+</tr>
+</tbody></table>
+
+<p><code>UploadApplicationResponse</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>digest</td>
+<td>Hash of the uploaded binary</td>
+</tr>
+<tr>
+<td>algorithm</td>
+<td>Algorithm used to obtain the digest</td>
+</tr>
+<tr>
+<td>analyzed</td>
+<td>True if the build has already been analyzed</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>The platform type (<code>android</code> or <code>ios</code>)</td>
+</tr>
+<tr>
+<td>package</td>
+<td>The package or bundle ID of the application</td>
+</tr>
+<tr>
+<td>version</td>
+<td>Application version</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Application title</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Application name</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>The application&#39;s icon in Base64 encoding</td>
+</tr>
+<tr>
+<td>downloaded_appstore_application_key</td>
+<td>App or Play store ID for applications downloaded from their store</td>
+</tr>
+</tbody></table>
+<h3 id='getappvulnerabilities'>getAppVulnerabilities</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformApi</span> <span class="p">{</span>
+  <span class="nx">getAppVulnerabilities</span><span class="p">(</span><span class="nx">appRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">VulnerabilityResponse</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Retrieves the application vulnerabilities found by Platform</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>appRef</td>
+<td>Reference (UUID) of the application to archive</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Return type</p>
+</blockquote>
+<div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">VulnerabilityEntry</span> <span class="p">{</span>
+  <span class="nl">unique_vulnerability_id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">finding_id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">opened_at</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">last_seen_at</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">last_seen_cvss</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">closed_at</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">opened_in_assessment_id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">last_seen_in_assessment_id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">opened_in_app_version</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">last_seen_in_app_version</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">closed_in_assessment_id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">closed_in_app_version</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">finding_title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">VulnerabilityResponse</span> <span class="o">=</span> <span class="nx">VulnerabilityEntry</span><span class="p">[];</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>unique_vulnerability_id</td>
+<td>Number</td>
+<td>Monotonically increasing 64-bit integer key representing the identified vulnerability record</td>
+</tr>
+<tr>
+<td>finding_id</td>
+<td>String</td>
+<td>Finding key enum representing the specific finding associated with vulnerability</td>
+</tr>
+<tr>
+<td>opened_at</td>
+<td>Date</td>
+<td>Timestamp representing when this specific identified vulnerability record was created</td>
+</tr>
+<tr>
+<td>last_seen_at</td>
+<td>Date</td>
+<td>Timestamp representing the last time we recorded when this specific vulnerability recurred</td>
+</tr>
+<tr>
+<td>last_seen_cvss</td>
+<td>Number</td>
+<td>CVSS value associated with the finding</td>
+</tr>
+<tr>
+<td>closed_at</td>
+<td>Date</td>
+<td>Timestamp representing when the associated finding was found to no longer be a vulnerability (i.e. either it was tested for and found to not be affected, or the finding was edited to push the CVSS score down to 0, making it no longer a vulnerability)</td>
+</tr>
+<tr>
+<td>opened_in_assessment_id</td>
+<td>String</td>
+<td>UUID assessment &quot;ref&quot; associated with last assessment where vulnerability was first discovered (e.g. assessment with a non-zero CVSS score for associated finding, and no preexisting identified vuln associated with this app and finding was already open)</td>
+</tr>
+<tr>
+<td>last_seen_in_assessment_id</td>
+<td>String</td>
+<td>UUID assessment &quot;ref&quot; associated with most recent assessment where finding was found to still be vulnerable</td>
+</tr>
+<tr>
+<td>opened_in_app_version</td>
+<td>String</td>
+<td>Textual app version associated with assessment</td>
+</tr>
+<tr>
+<td>last_seen_in_app_version</td>
+<td>String</td>
+<td>Textual app version associated with last seen assessment</td>
+</tr>
+<tr>
+<td>closed_in_assessment_id (optional)</td>
+<td>String</td>
+<td>If vulnerability record is closed, the uuid assessment &quot;ref&quot; associated with assessment which closed the vuln</td>
+</tr>
+<tr>
+<td>closed_in_app_version (optional)</td>
+<td>String</td>
+<td>If vulnerability record is closed, the textual app version associated with assessment which closed the vuln</td>
+</tr>
+</tbody></table>
+<h2 id='assessment-apis'>Assessment APIs</h2><h3 id='listassessments'>listAssessments</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">listAssessments</span><span class="p">(</span>
+    <span class="nx">options</span><span class="p">?:</span> <span class="nx">AssessmentsQueryVariables</span><span class="p">,</span>
+    <span class="nx">filter</span><span class="p">?:</span> <span class="nx">Filter</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Assessment</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">AssessmentsQueryVariables</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">groupRefs</span><span class="p">?:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">|</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">platformType</span><span class="p">?:</span> <span class="nx">PlatformEnum</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">refs</span><span class="p">?:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">|</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">limit</span><span class="p">?:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">scope</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">affectedByFindingKey</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">since</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">after</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">before</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">until</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">reverse</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeDeleted</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">defaultConfig</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">appstoreDownload</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">failFast</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">favorite</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeDeputy</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeConfig</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeState</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeReport</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">includeBuild</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Return a list of assessments</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>options</td>
+<td>Select which assessments &amp; what data to return</td>
+</tr>
+<tr>
+<td>filter</td>
+<td><a href="#filter"><code>Filter</code></a> controlling which findings are returned.If no filter is specified all findings are returned, including those that do not affect the application</td>
+</tr>
+</tbody></table>
+
+<p><code>AssessmentsQueryVariables</code><br/></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>groupRefs</td>
+<td>Filter by group reference</td>
+</tr>
+<tr>
+<td>platformType</td>
+<td>Filter by platform type (ios or android)</td>
+</tr>
+<tr>
+<td>refs</td>
+<td>Filter by assessment ID</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Limit the number of assessments returned</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>Query scope</td>
+</tr>
+<tr>
+<td>affectedByFindingKey</td>
+<td>Filter assessments affected by a specific finding. Requires a limit to be set</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Filter by a status, e.g. &quot;completed&quot;</td>
+</tr>
+<tr>
+<td>since</td>
+<td>Filter on creation date &gt;= date</td>
+</tr>
+<tr>
+<td>after</td>
+<td>Filter on creation date &gt; date</td>
+</tr>
+<tr>
+<td>before</td>
+<td>Filter on creation date &lt; date</td>
+</tr>
+<tr>
+<td>until</td>
+<td>Filter on creation date &lt;= date</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>Reverse the order in the list</td>
+</tr>
+<tr>
+<td>includeDeleted</td>
+<td>Include deleted assessments</td>
+</tr>
+<tr>
+<td>defaultConfig</td>
+<td>Filter by default or custom configuration used</td>
+</tr>
+<tr>
+<td>appstoreDownload</td>
+<td>Filter by the source of the binary analyzed</td>
+</tr>
+<tr>
+<td>failFast</td>
+<td>Filter by failFast option</td>
+</tr>
+<tr>
+<td>favorite</td>
+<td>Filter by favorite status</td>
+</tr>
+<tr>
+<td>includeDeputy</td>
+<td>Include deputy ()</td>
+</tr>
+<tr>
+<td>includeConfig</td>
+<td>Include the assessment configuration</td>
+</tr>
+<tr>
+<td>includeState</td>
+<td>Include the current assessment state</td>
+</tr>
+<tr>
+<td>includeReport</td>
+<td>Include the findings report</td>
+</tr>
+<tr>
+<td>includeBuild</td>
+<td>Include build information about the analyzed binary</td>
+</tr>
+</tbody></table>
+<h3 id='fetchassessment'>fetchAssessment</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">fetchAssessment</span><span class="p">(</span>
+    <span class="nx">reportId</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">sections</span><span class="p">?:</span> <span class="nx">AssessmentSections</span><span class="p">,</span>
+    <span class="nx">filter</span><span class="p">?:</span> <span class="nx">Filter</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Assessment</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Fetch an assessment. The query returns with the current state of the assessment which will
+include incomplete data if the assessment has yet to complete.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reportId</td>
+<td>ID of the assessment to fetch</td>
+</tr>
+<tr>
+<td>sections</td>
+<td><a href="#assessmentsections"><code>AssessmentSections</code></a> object controlling which sections of the assessment are fetched</td>
+</tr>
+<tr>
+<td>filter</td>
+<td><a href="#filter"><code>Filter</code></a> controlling which findings are returned. If no filter is specified all findings are returned, including those that do not affect the application</td>
+</tr>
+</tbody></table>
+<h3 id='pollforreport'>pollForReport</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">pollForReport</span><span class="p">(</span>
+    <span class="nx">reportId</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">sections</span><span class="p">?:</span> <span class="nx">AssessmentSections</span><span class="p">,</span>
+    <span class="nx">filter</span><span class="p">?:</span> <span class="nx">Filter</span><span class="p">,</span>
+    <span class="nx">pollInterval</span> <span class="o">=</span> <span class="mi">60000</span><span class="p">,</span>
+    <span class="nx">timeout</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Assessment</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Waits for an assessment to complete.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reportId</td>
+<td>ID of the assessment to fetch</td>
+</tr>
+<tr>
+<td>sections</td>
+<td><a href="#assessmentsections"><code>AssessmentSections</code></a> object controlling which sections of the assessment are fetched</td>
+</tr>
+<tr>
+<td>filter</td>
+<td><a href="#filter"><code>Filter</code></a> controlling which findings are returned. If no filter is specified all findings are returned, including those that do not affect the application</td>
+</tr>
+<tr>
+<td>pollInterval</td>
+<td>Polling interval in milliseconds. Defaults to polling every minute.</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Timeout in milliseconds; if the timeout is exceeded the function will return <code>null</code>. Pass 0 to retry indefinitely</td>
+</tr>
+</tbody></table>
+<h3 id='rawassessmentdata'>rawAssessmentData</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">rawAssessmentData</span><span class="p">(</span><span class="nx">assessmentId</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">JSONObject</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Returns the raw assessment data in JSON format.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assessmentId</td>
+<td>The assessment to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='islicensevalid'>isLicenseValid</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{}</span>
+</code></pre></div><h3 id='startassessment'>startAssessment</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">startAssessment</span><span class="p">(</span>
+    <span class="nx">platform</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">,</span>
+    <span class="nx">packageName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">groupRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">isAppStore</span><span class="p">:</span> <span class="nx">boolean</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">StartAssessmentResponse</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">StartAssessmentResponse</span> <span class="p">{</span>
+  <span class="nl">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">application</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">group</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">account</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">platform</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">;</span>
+  <span class="nl">package</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">task</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">creator</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">created</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">favorite</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">appstore_download</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">config</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">static</span><span class="p">:</span> <span class="nb">Record</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">,</span> <span class="nx">boolean</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="nl">dynamic</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">find</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+        <span class="nl">avoid</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+      <span class="p">};</span>
+      <span class="nl">search_data</span><span class="p">:</span> <span class="nb">Record</span><span class="o">&lt;</span>
+        <span class="kr">string</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="na">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+          <span class="nl">is_sensitive</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+          <span class="nl">search_strings</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+        <span class="p">}</span>
+      <span class="o">&gt;</span><span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">static</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">state</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nl">dynamic</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">state</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+  <span class="nl">cancelled</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">task_status</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Start an assessment for the latest build of an existing application.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>platform</td>
+<td>Application platform (<code>android</code> or <code>ios</code>)</td>
+</tr>
+<tr>
+<td>packageName</td>
+<td>Package or Bundle ID</td>
+</tr>
+<tr>
+<td>groupRef</td>
+<td>Application group</td>
+</tr>
+<tr>
+<td>isAppStore</td>
+<td>Pull the binary from the appropriate app store</td>
+</tr>
+</tbody></table>
+
+<p><code>StartAssessmentResponse</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>The ID of the triggered assessment</td>
+</tr>
+<tr>
+<td>application</td>
+<td>ID of the application</td>
+</tr>
+<tr>
+<td>group</td>
+<td>ID of the application group</td>
+</tr>
+<tr>
+<td>account</td>
+<td>historical duplicate of group</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>The platform type (<code>android</code> or <code>ios</code>)</td>
+</tr>
+<tr>
+<td>package</td>
+<td>The package identifier</td>
+</tr>
+<tr>
+<td>task</td>
+<td>The ID of the task running the assessment. Can be used to cancel the assessment</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>ID of the user triggering the assessment</td>
+</tr>
+<tr>
+<td>created</td>
+<td>Timestamp when the assessment was created (ISO DateTime format)</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>Unique ID for this package (SHA-256 hash of the binary)</td>
+</tr>
+<tr>
+<td>config</td>
+<td>The configuration used for this assessment</td>
+</tr>
+<tr>
+<td>status</td>
+<td>The status of the static and dynamic portions of the assessment</td>
+</tr>
+<tr>
+<td>cancelled</td>
+<td>True if the assessment has been cancelled</td>
+</tr>
+<tr>
+<td>task_status</td>
+<td>Overall status of the assessment</td>
+</tr>
+</tbody></table>
+<h3 id='cancelassessment'>cancelAssessment</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">cancelAssessment</span><span class="p">(</span><span class="nx">assessmentRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">CancelAssessmentResponse</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">CancelAssessmentResponse</span> <span class="p">{</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="nx">AssessmentJobSummaryStatus</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cancel a running assessment</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assessmentRef</td>
+<td>ID of the assessment to cancel</td>
+</tr>
+</tbody></table>
+<h2 id='organization-apis'>Organization APIs</h2><h3 id='orggroups'>orgGroups</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">orgGroups</span><span class="p">(</span><span class="nx">options</span><span class="p">:</span> <span class="nx">OrgGroupsOptions</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Group</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">OrgGroupsOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">active</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Lists the <a href="#group"><code>groups</code></a> in the user&#39;s organization</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>options</td>
+<td>Select which groups to return</td>
+</tr>
+</tbody></table>
+<h3 id='listinvitations'>listInvitations</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">listInvitations</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Invitation</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Returns the list of current <a href="#invitation"><code>Invitations</code></a></p>
+<h3 id='inviteuser'>inviteUser</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">inviteUser</span><span class="p">(</span><span class="nx">options</span><span class="p">:</span> <span class="nx">InviteUserOptions</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Invitation</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">InviteUserOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">email</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">roleName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">groupRefs</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">string</span><span class="p">[];</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Send an invitation to join the user&#39;s group</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The invitee&#39;s name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The invitee&#39;s email address</td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>The role that will be assigned to the invitee</td>
+</tr>
+<tr>
+<td>groupRefs</td>
+<td>IDs of the group or groups to which the invitee will be added</td>
+</tr>
+</tbody></table>
+
+<p>Returns an <a href="#invitation"><code>Invitiation</code></a> object.</p>
+<h3 id='revokeinvitation'>revokeInvitation</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+    <span class="nx">revokeInvitation</span><span class="p">(</span><span class="nx">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Revokes an invitation to join the user&#39;s organization</p>
+
+<p>Returns the reference of the revoked invitation.</p>
+<h3 id='listroles'>listRoles</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">listRoles</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Role</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Role</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">ref</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">label</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">description</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">defaultPermissions</span><span class="p">:</span> <span class="nx">Permission</span><span class="p">[];</span>
+  <span class="nl">permissions</span><span class="p">?:</span> <span class="nx">Permission</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">Permission</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">label</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">privileges</span><span class="p">?:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">createdAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">updatedAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Lists the roles defined for the user&#39;s organization</p>
+<h3 id='orgusers'>orgUsers</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">PlatformAPI</span> <span class="p">{</span>
+  <span class="nx">orgUsers</span><span class="p">(</span><span class="nx">options</span><span class="p">:</span> <span class="nx">OrgUsersOptions</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">OrgUsersOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">active</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Lists the <a href="#user"><code>users</code></a> in the user&#39;s organization</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>options</td>
+<td>Select which users to return</td>
+</tr>
+</tbody></table>
+<h2 id='user-apis'>User APIs</h2>
+<p>APIs to retrieve information about the current user (the user that generated the API token used in the <a href="#nowsecureclient">NowSecureClient</a>).</p>
+<h3 id='usergroups'>userGroups</h3><h3 id='userinfo'>userInfo</h3><h1 id='types-and-interfaces'>Types and Interfaces</h1><h2 id='appresource'>AppResource</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">AppResource</span> <span class="p">{</span>
+  <span class="nl">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">account</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">platform</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">;</span>
+  <span class="nl">package</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">group</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">created</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">archived_at</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">config_level</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">binary</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">test_runner_binary</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">config</span><span class="p">:</span> <span class="nx">JSONObject</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>ref</code></td>
+<td>Application reference (UUID)</td>
+</tr>
+<tr>
+<td><code>account</code></td>
+<td>Group UUID (duplicate of <code>group</code>)</td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td><code>ios</code> or <code>android</code></td>
+</tr>
+<tr>
+<td><code>package</code></td>
+<td>package id, e.g. <code>com.example.app</code></td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>Group UUID</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td>Creation time for the app record in ISO format</td>
+</tr>
+<tr>
+<td><code>archived_at</code></td>
+<td>Time the application was archived in ISO format</td>
+</tr>
+<tr>
+<td><code>config_level</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>binary</code></td>
+<td>Id of the application binary (SHA256 hash)</td>
+</tr>
+<tr>
+<td><code>test_runner_binary</code></td>
+<td>string</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>The analysis &amp; integration configuration for the application</td>
+</tr>
+</tbody></table>
+<h2 id='appanalysisconfig'>AppAnalysisConfig</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">AppAnalysisConfigFieldsFragment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">jsScript</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">dslScript</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">dslScriptFilename</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">searchTerms</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">searchStrings</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">searchData</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">value</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">searchStrings</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="nl">nonSensitive</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">actions</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="na">find</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="nl">avoid</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">xctest</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="nx">functionName</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">runnerFilename</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">appium</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="nx">archiveFilename</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">runnerFilename</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">interpreter</span><span class="p">?:</span> <span class="nx">AppiumInterpreter</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">setupCommand</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">code</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<table>
+<thead><tr><th>Field</th><th>Descriptions</th></tr></thead>
+<tbody>
+<tr><td>jsScript</td><td>JavaScript to run when testing an Android app</td></tr>
+<tr><td>dslScriptName</td><td>Name of the JS file containing the script. Set when uploading, display use only </td></tr>
+<tr><td style="white-space: pre;">searchTerms
+        name
+        value
+        searchStrings</td>
+<td style="white-space: pre;">An array of entries for search data corresponding to the predefined terms from the default configuration.
+        Name of the term
+        Text to search for
+        Application fields</td></tr>
+<tr><td style="white-space: pre;">searchData
+        key
+        value
+        searchStrings
+        nonSensitive</td>
+<td style="white-space: pre;">An array of custom search terms.
+        Name of the term
+        Text to search for
+        Application fields
+        If false, data will be shown masked in the UI</td></tr>
+<tr><td style="white-space: pre;">actions
+        find
+        avoid</td>
+<td style="white-space: pre;">Action string configuration.
+        Tappable actions to search for
+        Tappable actions to avoid</td></tr>
+<tr><td style="white-space: pre;">xctest
+        functionName
+        runnerFilename</td>
+<td style="white-space: pre;">XCTest configuration.
+        Function to invoke
+        Name of the uploaded .ipa file</td></tr>
+<tr><td style="white-space: pre;">appium
+        archiveFilename
+        runnerFilename
+        interpreter
+        setupCommand
+        code</td>
+<td style="white-space: pre;">Appiun string configuration.
+        Name of the uploaded archive
+        Entry point filename
+        `python3` or `node`
+        Setup command
+        URL for the uploaded script archive</td></tr>
+</tbody>
+</table>
+<h2 id='assessment'>Assessment</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">Assessment</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">platformType</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">;</span>
+  <span class="nl">packageKey</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">packageVersion</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">buildVersion</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">isAppstoreDownload</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">taskId</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">groupRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">applicationRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">createdAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">config</span><span class="p">?:</span> <span class="kr">any</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">deputy</span><span class="p">?:</span> <span class="kr">any</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">build</span><span class="p">?:</span> <span class="nx">AutoBuild</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">analysis</span><span class="p">?:</span> <span class="nx">AutoAssessmentAnalysis</span><span class="p">;</span>
+  <span class="nl">report</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="na">findings</span><span class="p">:</span> <span class="nx">Finding</span><span class="p">[];</span>
+  <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>The assessment&#39;s ID</td>
+</tr>
+<tr>
+<td>platformType</td>
+<td>android or ios</td>
+</tr>
+<tr>
+<td>packageKey</td>
+<td>The package or bundle ID</td>
+</tr>
+<tr>
+<td>packageVersion</td>
+<td>The version retrieved from the package</td>
+</tr>
+<tr>
+<td>buildVersion</td>
+<td>The build version retrieved from the package</td>
+</tr>
+<tr>
+<td>isAppstoreDownload</td>
+<td>True if the application binary came from the platform&#39;s app store</td>
+</tr>
+<tr>
+<td>taskId</td>
+<td>ID of the task running the assessment</td>
+</tr>
+<tr>
+<td>groupRef</td>
+<td>ID of the application group</td>
+</tr>
+<tr>
+<td>applicationRef</td>
+<td>ID of the application</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>Creation date of the assessment</td>
+</tr>
+<tr>
+<td>config</td>
+<td>The configuration used in the assessment</td>
+</tr>
+<tr>
+<td>deputy</td>
+<td>The dependency information surfaced in the assessment</td>
+</tr>
+<tr>
+<td>build</td>
+<td>Detailed build information</td>
+</tr>
+<tr>
+<td>analysis</td>
+<td>The detailed analysis status</td>
+</tr>
+<tr>
+<td>report</td>
+<td>The list of findings</td>
+</tr>
+</tbody></table>
+<h2 id='autoassessmentanalysis'>AutoAssessmentAnalysis</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">AutoAssessmentAnalysis</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">status</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">isRunning</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">isComplete</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">isCancelled</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">errorCode</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">task</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">dynamic</span><span class="p">:</span> <span class="nx">AnalysisJob</span><span class="p">;</span>
+    <span class="nl">static</span><span class="p">:</span> <span class="nx">AnalysisJob</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">AnalysisJob</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">status</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">modifiedAt</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">isRunning</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">isComplete</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">emsg</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>The execution state of an assessment.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Current status of the assessment</td>
+</tr>
+<tr>
+<td>isRunning</td>
+<td>True if the assessment is still running</td>
+</tr>
+<tr>
+<td>isComplete</td>
+<td>True if the assessment completed successfully</td>
+</tr>
+<tr>
+<td>isCancelled</td>
+<td>True if the assessment was cancelled</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td>The error if the assessment failed</td>
+</tr>
+<tr>
+<td>task</td>
+<td>The status of the static and dynamic jobs</td>
+</tr>
+</tbody></table>
+
+<p><code>AnalysisJob</code></p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Status of the job</td>
+</tr>
+<tr>
+<td>modifiedAt</td>
+<td>Last time the job state was modified</td>
+</tr>
+<tr>
+<td>isRunning</td>
+<td>True if the job is still running</td>
+</tr>
+<tr>
+<td>isComplete</td>
+<td>True if the job completed successfully</td>
+</tr>
+<tr>
+<td>emsg</td>
+<td>The error message if the job failed</td>
+</tr>
+</tbody></table>
+<h2 id='assessmentsections'>AssessmentSections</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">AssessmentSections</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">includeConfig</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">includeDeputy</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">includeReport</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">includeState</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">includeBuild</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Controls which parts of an assessment to include when fetching an assessment.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>includeConfig</td>
+<td>Include the analysis configuration data</td>
+</tr>
+<tr>
+<td>includeDeputy</td>
+<td>Include the dependency information for the package</td>
+</tr>
+<tr>
+<td>includeReport</td>
+<td>Include the findings</td>
+</tr>
+<tr>
+<td>includeState</td>
+<td>Include the assessment state information</td>
+</tr>
+<tr>
+<td>includeBuild</td>
+<td>Include the package build information</td>
+</tr>
+</tbody></table>
+<h2 id='autobuild'>AutoBuild</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">AutoBuild</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">groupRef</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">digest</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">platformType</span><span class="p">:</span> <span class="nx">PlatformEnum</span><span class="p">;</span>
+  <span class="nl">packageKey</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">appstoreApplicationKey</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">createdAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">uploadedAt</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">uploadedBy</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">version</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">iconURL</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">isAnalyzed</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">isAppstoreDownload</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Details of specific version of a package</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>The build record&#39;s ID</td>
+</tr>
+<tr>
+<td>groupRef</td>
+<td>ID of the application group</td>
+</tr>
+<tr>
+<td>digest</td>
+<td>SHA256 hash of the binary</td>
+</tr>
+<tr>
+<td>platformType</td>
+<td>android or ios</td>
+</tr>
+<tr>
+<td>packageKey</td>
+<td>the package or bundle ID</td>
+</tr>
+<tr>
+<td>appstoreApplicationKey?</td>
+<td>The ID used for this app by the platform&#39;s app store (if isAppstoreDownload is true)</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>When the build record was created</td>
+</tr>
+<tr>
+<td>uploadedAt?</td>
+<td>When the application binary was uploaded</td>
+</tr>
+<tr>
+<td>uploadedBy?</td>
+<td>User that uploaded the binary</td>
+</tr>
+<tr>
+<td>title?</td>
+<td>Application title</td>
+</tr>
+<tr>
+<td>version?</td>
+<td>Application version. Applications uploaded</td>
+</tr>
+<tr>
+<td>iconURL?</td>
+<td>URL for the application icon</td>
+</tr>
+<tr>
+<td>isAnalyzed</td>
+<td>True if an assessment has completed on this build</td>
+</tr>
+<tr>
+<td>isAppstoreDownload</td>
+<td>Whether the source of the binary was the platform&#39;s application store</td>
+</tr>
+</tbody></table>
+<h2 id='filter'>Filter</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kr">interface</span> <span class="nx">Filter</span> <span class="p">{</span>
+  <span class="nl">includeChecks</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+  <span class="nl">excludeChecks</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
+  <span class="nl">severityFilter</span><span class="p">:</span> <span class="nx">Severity</span><span class="p">[];</span>
+  <span class="nl">includeWarnings</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Filter settings used to control which findings are returned in an assessment report.<br/>
+All filters exclude findings which do not affect the application</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>includeChecks</td>
+<td>Findings to include, even if the finding does not meet the other criteria</td>
+</tr>
+<tr>
+<td>excludeChecks</td>
+<td>Findings that should not be included, even if the finding meets the other criteria</td>
+</tr>
+<tr>
+<td>severityFilter</td>
+<td>Filter on severity, returning the finding if its severity is included in the list. Possible severity values are <code>critical</code>, <code>high</code>, <code>medium</code>, <code>low</code>, and <code>info</code></td>
+</tr>
+<tr>
+<td>includeWarnings</td>
+<td>Include findings classed as warnings, even if the severity criterion does not include <code>info</code> findings</td>
+</tr>
+</tbody></table>
+<h2 id='finding'>Finding</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">Finding</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">kind</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">category</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">summary</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">affected</span><span class="p">?:</span> <span class="nx">boolean</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">severity</span><span class="p">?:</span> <span class="nx">VulnerabilitySeverityCategoryEnum</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">impactType</span><span class="p">:</span> <span class="nx">FindingImpactTypeEnum</span><span class="p">;</span>
+  <span class="nl">uniqueVulnerabilityId</span><span class="p">?:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">checkId</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">cvss</span><span class="p">?:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">cvssVector</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">context</span><span class="p">?:</span> <span class="nx">FindingContext</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">check</span><span class="p">:</span> <span class="nx">FindingCheck</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">FindingContext</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">fields</span><span class="p">?:</span> <span class="kr">any</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">rows</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">description</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">items</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">checkId</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">FindingCheck</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">analysisType</span><span class="p">:</span> <span class="nx">AnalysisType</span><span class="p">;</span>
+  <span class="nl">context</span><span class="p">?:</span> <span class="nx">FindingMetadata</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">issue</span><span class="p">?:</span> <span class="nx">FindingIssue</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">FindingContextMetadata</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">view</span><span class="p">:</span> <span class="nx">FindingContextViewEnum</span><span class="p">;</span>
+  <span class="nl">title</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">fields</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">description</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">format</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">template</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">children</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">view</span><span class="p">:</span> <span class="nx">FindingContextViewEnum</span><span class="p">;</span>
+    <span class="nl">title</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="nl">fields</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+      <span class="na">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+      <span class="nl">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+      <span class="nl">format</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+      <span class="nl">template</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">FindingIssue</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">warn</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">description</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">impactSummary</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">stepsToReproduce</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">recommendation</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">category</span><span class="p">?:</span> <span class="nx">VulnerabilityCategoryEnum</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">cvss</span><span class="p">?:</span> <span class="kr">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">cve</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">cvssVector</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">regulations</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">label</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">links</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">url</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nl">codeSamples</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">syntax</span><span class="p">:</span> <span class="nx">IssueCodeSyntaxType</span><span class="p">;</span>
+    <span class="nl">caption</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">block</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">guidanceLinks</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span>
+    <span class="na">caption</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">url</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>A specific instance of a finding, associated with a specific assessment.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>kind</td>
+<td>The finding type, <code>static</code> or <code>dynamic</code></td>
+</tr>
+<tr>
+<td>category</td>
+<td>The finding category, e.g <code>network</code> or <code>code</code></td>
+</tr>
+<tr>
+<td>key</td>
+<td>Finding key</td>
+</tr>
+<tr>
+<td>title</td>
+<td>The finding title</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>Summary of the finding</td>
+</tr>
+<tr>
+<td>affected</td>
+<td>Whether the application is affected by this finding</td>
+</tr>
+<tr>
+<td>severity</td>
+<td>Finding severity</td>
+</tr>
+<tr>
+<td>impactType</td>
+<td>The impact of the finding, ranging from <code>pass</code> to <code>critical</code></td>
+</tr>
+<tr>
+<td>uniqueVulnerabilityId</td>
+<td>Unique id of the vulnerability</td>
+</tr>
+<tr>
+<td>checkId</td>
+<td>ID of the check made for this finding</td>
+</tr>
+<tr>
+<td>cvss</td>
+<td>CVSS score for the finding</td>
+</tr>
+<tr>
+<td>cvssVector</td>
+<td>CVSS vector for this finding</td>
+</tr>
+<tr>
+<td>context</td>
+<td>The context data for this finding, for example method names using an insecure api</td>
+</tr>
+<tr>
+<td>check</td>
+<td>The check made for this finding</td>
+</tr>
+</tbody></table>
+
+<p><code>FindingContext</code></p>
+
+<p>Finding context data, including a potentially recursive declarative schema defining tabular fields, including formatting hints for rendering.</p>
+
+<p><code>FindingCheck</code></p>
+
+<p>Definition of the check that was run for this finding.ß</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>Title of the check</td>
+</tr>
+<tr>
+<td>analysisType</td>
+<td><code>static</code> or <code>dynamic</code></td>
+</tr>
+<tr>
+<td>context</td>
+<td>Metadata describing the finding&#39;s context data</td>
+</tr>
+<tr>
+<td>issue</td>
+<td>The issue definition associated with this check</td>
+</tr>
+</tbody></table>
+
+<p><code>FindingContextMetadata</code></p>
+
+<p>Describes how to render the context metadata, if the finding has context.</p>
+
+<p><code>FindingIssue</code></p>
+
+<p>The definition of an issue</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>The issue title</td>
+</tr>
+<tr>
+<td>warn</td>
+<td>True if the issue is flagged as a developer warning</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Description of the issue</td>
+</tr>
+<tr>
+<td>impactSummary</td>
+<td>The impact the issue will have on the application</td>
+</tr>
+<tr>
+<td>stepsToReproduce</td>
+<td>How to demonstrate the issue in the app</td>
+</tr>
+<tr>
+<td>recommendation</td>
+<td>Recommended action to remediate the issue</td>
+</tr>
+<tr>
+<td>category</td>
+<td>The issue category, e.g. <code>network</code> or <code>code</code></td>
+</tr>
+<tr>
+<td>cvss</td>
+<td>The CVSS score for the issue</td>
+</tr>
+<tr>
+<td>cve</td>
+<td>CVE reference</td>
+</tr>
+<tr>
+<td>cvssVector</td>
+<td>CVSS vector describing the issue</td>
+</tr>
+<tr>
+<td>regulations</td>
+<td>List of regulations that may apply to the issue (e.g HIPAA)</td>
+</tr>
+<tr>
+<td>codeSamples</td>
+<td>Code samples showing good and bad coding practices. The <code>syntax</code> field defines the language for the sample</td>
+</tr>
+<tr>
+<td>guidanceLinks</td>
+<td>External links to guidance on the issue</td>
+</tr>
+</tbody></table>
+<h2 id='group'>Group</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">Group</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">id</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">createdAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">active</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">note</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">currentApplicationCount</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">completedAssessmentCount</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">completedBaselineAssessmentCount</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">settings</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">value</span><span class="p">?:</span> <span class="kr">any</span> <span class="o">|</span> <span class="kc">null</span> <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Information about a group</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>Group ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The group name</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>When the group was created</td>
+</tr>
+<tr>
+<td>active</td>
+<td>True if the group is active</td>
+</tr>
+<tr>
+<td>note</td>
+<td>Group notes</td>
+</tr>
+<tr>
+<td>currentApplicationCount</td>
+<td>The number of non-archived application in the group</td>
+</tr>
+<tr>
+<td>completedAssessmentCount</td>
+<td>Number of assessments successfully completed</td>
+</tr>
+<tr>
+<td>completedBaselineAssessmentCount</td>
+<td>Number of baseline assessments successfully completed</td>
+</tr>
+<tr>
+<td>completedAdvancedAssessmentCount</td>
+<td>Number of advanced assessments successfully completed</td>
+</tr>
+<tr>
+<td>settings</td>
+<td>key-value pairs containing the group&#39;s settings</td>
+</tr>
+</tbody></table>
+<h2 id='invitation'>Invitation</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">Invitation</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">email</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">expiredAt</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">role</span><span class="p">:</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span> <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">label</span><span class="p">:</span> <span class="kr">string</span> <span class="p">};</span>
+  <span class="nl">groups</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Details of an invitation to join the user&#39;s organization</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>The ID of the invitation</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Invitee&#39;s name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Invitee&#39;s email address</td>
+</tr>
+<tr>
+<td>expiredAt</td>
+<td>Date when the invitation expired</td>
+</tr>
+<tr>
+<td>role</td>
+<td>The role selected for the invitee</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>The groups selected for the invitee</td>
+</tr>
+</tbody></table>
+<h2 id='user'>User</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">ref</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">email</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">createdAt</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">active</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+  <span class="nl">note</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="nl">groups</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">ref</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nl">role</span><span class="p">?:</span> <span class="p">{</span> <span class="nx">ref</span><span class="p">?:</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span> <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="nl">label</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Details of a Platform user</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ref</td>
+<td>User ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>User&#39;s name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>User&#39;s email address</td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>Creation date of the user record</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether the user is still active</td>
+</tr>
+<tr>
+<td>note</td>
+<td>User notes</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>Name and ID of the user&#39;s groups</td>
+</tr>
+<tr>
+<td>role</td>
+<td>The name and ID of the user&#39;s role in the organization</td>
+</tr>
+</tbody></table>
+<h1 id='support-classes'>Support classes</h1><h2 id='nowsecureclient'>NowSecureClient</h2>
+<p>NowSecureClient is the class used for raw calls to the NowSecure Platform APIs (both REST and GraphQL)</p>
+<h3 id='constructor'>constructor</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">constructor</span><span class="p">(</span><span class="nx">platform</span><span class="p">:</span> <span class="nx">PlatformConfig</span><span class="p">,</span> <span class="nx">options</span><span class="p">?:</span> <span class="nx">NSClientOptions</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="k">import</span> <span class="p">{</span>
+  <span class="nx">PlatformConfig</span><span class="p">,</span>
+  <span class="nx">NSClientOptions</span><span class="p">,</span>
+  <span class="nx">version</span><span class="p">,</span>
+  <span class="nx">NowSecureClient</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@nowsecure/platform-lib</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PlatformConfig</span><span class="p">(</span><span class="dl">"</span><span class="s2">MyPlatformApiToken</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">options</span><span class="p">:</span> <span class="nx">NSClientOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">userAgent</span><span class="p">:</span> <span class="s2">`My Amazing App / NS Library </span><span class="p">${</span><span class="nx">version</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="k">return</span> <span class="k">new</span> <span class="nx">NowSecureClient</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div>
+<p>Create a new NowSecureClient with the parameters passed in a PlatformConfig object</p>
+<h3 id='async-query-query-variables-ignoregqlerrors-config'>async query(query, variables, ignoreGQLErrors, config)</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code>  <span class="nx">query</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">V</span> <span class="kd">extends</span> <span class="nx">JSONObject</span> <span class="o">=</span> <span class="nx">JSONObject</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">query</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="nx">DocumentNode</span><span class="p">,</span>
+    <span class="nx">variables</span><span class="p">?:</span> <span class="nx">V</span><span class="p">,</span>
+    <span class="nx">ignoreGQLErrors</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">,</span>
+    <span class="nx">config</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>Runs a graphql query using an HTTP GET call. This call will retry up to 3 times on failure.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>The GraphQL query to execute. This can be a string or a <a href="https://github.com/graphql/graphql-js">graphql</a> document node.</td>
+</tr>
+<tr>
+<td>variables</td>
+<td>Variables used in the query</td>
+</tr>
+<tr>
+<td>ignoreGQLErrors</td>
+<td>Don&#39;t throw an exception when errors are present in the response</td>
+</tr>
+<tr>
+<td>config</td>
+<td><a href="#requestconfig">Request configuration</a></td>
+</tr>
+</tbody></table>
+<h3 id='async-mutation-query-variables-ignoregqlerrors-config'>async mutation(query, variables, ignoreGQLErrors, config)</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code>  <span class="nx">mutation</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">V</span> <span class="kd">extends</span> <span class="nx">JSONObject</span> <span class="o">=</span> <span class="nx">JSONObject</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">query</span><span class="p">:</span> <span class="kr">string</span> <span class="o">|</span> <span class="nx">DocumentNode</span><span class="p">,</span>
+    <span class="nx">variables</span><span class="p">?:</span> <span class="nx">V</span><span class="p">,</span>
+    <span class="nx">ignoreGQLErrors</span><span class="p">?:</span> <span class="nx">boolean</span><span class="p">,</span>
+    <span class="nx">config</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Runs a graphql mutation using an HTTP POST call. This call will not retry on failure.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>The GraphQL mutation to execute. This can be a string or a <a href="https://github.com/graphql/graphql-js">graphql</a> document node.</td>
+</tr>
+<tr>
+<td>variables</td>
+<td>Variables used in the query</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Request configuration</td>
+</tr>
+</tbody></table>
+<h3 id='get-path-config'>get(path, config)</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code>  <span class="kd">get</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span>(relativeUrl: string, config?: RequestConfig): Promise<span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span>;
+</code></pre></div>
+<p>Sends a GET request to the REST server. The request will retry on error</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>relativeUrl</td>
+<td>Path for the request including query parameters</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Request configuration</td>
+</tr>
+</tbody></table>
+<h3 id='post-relativeurl-params-config'>post(relativeUrl, params, config)</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code>  <span class="nx">post</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">relativeUrl</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">params</span><span class="p">?:</span> <span class="nx">JSONObject</span><span class="p">,</span>
+    <span class="nx">config</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>Sends a POST request to the REST server. The request will not retry on error</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>Path for the request including query parameters.</td>
+</tr>
+<tr>
+<td>variables</td>
+<td>Sent as JSON body</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Request configuration</td>
+</tr>
+</tbody></table>
+<h3 id='poststream-relativeurl-stream-config'>postStream(relativeUrl, stream, config)</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code>  <span class="nx">postStream</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">relativeUrl</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+    <span class="nx">stream</span><span class="p">:</span> <span class="nx">NodeJS</span><span class="p">.</span><span class="nx">ReadableStream</span><span class="p">,</span>
+    <span class="nx">config</span><span class="p">?:</span> <span class="nx">RequestConfig</span>
+  <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>Stream a NodeJS stream incrementally to the REST server. The request will not retry on error</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>Path for the request including query parameters.</td>
+</tr>
+<tr>
+<td>stream</td>
+<td>The stream to send</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Request configuration</td>
+</tr>
+</tbody></table>
+<h3 id='delete-relativeurl-config'>delete(relativeUrl, config)</h3><div class="highlight"><pre class="highlight tsx tab-tsx"><code>  <span class="k">async</span> <span class="k">delete</span><span class="p">&lt;</span><span class="nc">T</span> <span class="p">=</span> <span class="na">void</span><span class="p">&gt;</span>(
+    relativeUrl: string,
+    config?: RequestConfig
+  ): Promise<span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span>;
+</code></pre></div>
+<p>Sends a DELETE request to the server. The request will retry on error</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>relativeUrl</td>
+<td>Path for the request including query parameters</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Request configuration</td>
+</tr>
+</tbody></table>
+<h2 id='requestconfig'>RequestConfig</h2><div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">type</span> <span class="nx">RequestConfig</span> <span class="o">=</span> <span class="nb">Pick</span><span class="o">&lt;</span>
+  <span class="nx">AxiosRequestConfig</span><span class="p">,</span>
+  <span class="o">|</span> <span class="dl">"</span><span class="s2">onDownloadProgress</span><span class="dl">"</span>
+  <span class="o">|</span> <span class="dl">"</span><span class="s2">onUploadProgress</span><span class="dl">"</span>
+  <span class="o">|</span> <span class="dl">"</span><span class="s2">signal</span><span class="dl">"</span>
+  <span class="o">|</span> <span class="dl">"</span><span class="s2">timeout</span><span class="dl">"</span>
+  <span class="o">|</span> <span class="dl">"</span><span class="s2">timeoutErrorMessage</span><span class="dl">"</span>
+<span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// equivalent to</span>
+<span class="kr">interface</span> <span class="nx">RequestConfig</span> <span class="p">{</span>
+  <span class="nl">onUploadProgress</span><span class="p">?:</span> <span class="p">(</span><span class="nx">progressEvent</span><span class="p">:</span> <span class="nx">AxiosProgressEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nl">onDownloadProgress</span><span class="p">?:</span> <span class="p">(</span><span class="nx">progressEvent</span><span class="p">:</span> <span class="nx">AxiosProgressEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nl">signal</span><span class="p">?:</span> <span class="nx">GenericAbortSignal</span><span class="p">;</span>
+  <span class="nl">timeout</span><span class="p">?:</span> <span class="nx">Milliseconds</span><span class="p">;</span>
+  <span class="nl">timeoutErrorMessage</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Use of the <code>signal</code> field:</p>
+</blockquote>
+
+<p>A subset of the <a href="https://axios-http.com/docs/req_config">AxiosRequestConfig</a> options passed to NowSecureClient get and post operations.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>onDownloadProgress</code></td>
+<td>A callback invoked when data is received in a streaming download operation</td>
+</tr>
+<tr>
+<td><code>onUploadProgress</code></td>
+<td>A callback invoked when data is sent in a streaming upload operation</td>
+</tr>
+<tr>
+<td><code>signal</code></td>
+<td>An <a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController">AbortController</a> used to terminate a request</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>timeout period in milliseconds for the request</td>
+</tr>
+<tr>
+<td><code>timeoutErrorMessage</code></td>
+<td>message to return in the <code>AxiosError</code> returned when a request times out</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight tsx tab-tsx"><code><span class="kd">const</span> <span class="nx">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AbortController</span><span class="p">();</span>
+<span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">signal</span><span class="p">:</span> <span class="nx">controller</span> <span class="p">});</span>
+
+<span class="c1">// invoked from e.g. a UI event handler</span>
+<span class="nx">controller</span><span class="p">.</span><span class="nx">abort</span><span class="p">();</span>
+</code></pre></div><h2 id='platform'>Platform</h2>
+<p>The Platform class implements the API as methods</p>
+<h3 id='constructor-client-nowsecureclient'>constructor(client: NowSecureClient)</h3>
+<p>Constructs a Platform instance that will communicate with the server via the passed NowSecureClient instance.</p>
+<h3 id='methods'>methods</h3>
+<p>Each method invokes the matching API function passing the NowSecureClient instance used to construct the class.</p>
+<h4 id='application-methods'>Application methods</h4>
+<p><a href="#archiveapp"><code>async archiveApp(appRef: string, unarchive?: boolean): Promise&lt;AppResource&gt;</code></a></p>
+
+<p><a href="#getanalysisconfig"><code>async getAnalysisConfig(appRef?: string): Promise&lt;AppAnalysisConfig&gt;</code></a></p>
+
+<p><a href="#updateanalysisconfig"><code>async updateAnalysisConfig(appRef: string, runnerType?: RunnerType, runnerFile?: string, update?: UpdateConfigOptions, mergeSearchTerms?: boolean, requestConfig?: RequestConfig): Promise&lt;void&gt;</code></a></p>
+
+<p><a href="#resetanalysisconfig"><code>async resetAnalysisConfig(appRef: string): Promise&lt;void&gt;</code></a></p>
+
+<p><a href="#createapp"><code>async createApp(platform: PlatformEnum, packageName: string, groupRef?: string): Promise&lt;AppResource&gt;</code></a></p>
+
+<p><a href="#listapplications"><code>async listApplications(options?: ListApplicationOptions, filter?: Filter): Promise&lt;Application[]&gt;</code></a></p>
+
+<p><a href="#processbinary"><code>async processBinary(stream: NodeJS.ReadableStream, groupId?: string, config?: RequestConfig): Promise&lt;ProcessApplicationResponse&gt;</code></a></p>
+
+<p><a href="#uploadbinary"><code>async uploadBinary(stream: NodeJS.ReadableStream, groupId?: string, config?: RequestConfig): Promise&lt;UploadApplicationResponse&gt;</code></a></p>
+
+<p><a href="#processbinary"><code>async processBinary(stream: NodeJS.ReadableStream, groupId?: string, config?: RequestConfig): Promise&lt;ProcessApplicationResponse&gt;</code></a></p>
+
+<p><a href="#uploadbinary"><code>async uploadBinary(stream: NodeJS.ReadableStream, groupId?: string, config?: RequestConfig): Promise&lt;UploadApplicationResponse&gt;</code></a></p>
+
+<p><a href="#getappvulnerabilities"><code>async getAppVulnerabilities(appRef: string): Promise&lt;VulnerabilityResponse&gt;</code></a></p>
+
+<p><a href="#cancelassessment"><code>async cancelAssessment(assessmentRef: string): Promise&lt;CancelAssessmentResponse&gt;</code></a></p>
+
+<p><a href="#fetchassessment"><code>async fetchAssessment(reportId: string, sections?: AssessmentSections, filter?: Filter): Promise&lt;Assessment | null&gt;</code></a></p>
+
+<p><a href="#pollforreport"><code>async pollForReport(reportId: string, sections?: PollSections, filter?: Filter, pollInterval?: number, timeout?: number, log?: (text: string) =&gt; void): Promise&lt;Assessment | null&gt;</code></a></p>
+
+<p><a href="#islicensevalid"><code>async isLicenseValid(licenseWorkaround: boolean): Promise&lt;boolean&gt;</code></a></p>
+
+<p><a href="#listassessments"><code>async listAssessments(options?: AssessmentsQueryVariables, filter?: Filter): Promise&lt;Assessment[]&gt;</code></a></p>
+
+<p><a href="#rawassessmentdata"><code>async rawAssessmentData(assessmentId: string): Promise&lt;JSONObject&gt;</code></a></p>
+
+<p><a href="#startassessment"><code>async startAssessment(platform: PlatformEnum, packageName: string, groupRef: string, isAppStore: boolean): Promise&lt;StartAssessmentResponse&gt;</code></a></p>
+
+<p><a href="#orggroups"><code>async orgGroups(options: OrgGroupsOptions): Promise&lt;Group[]&gt;</code></a></p>
+
+<p><a href="#listinvitations"><code>async listInvitations(): Promise&lt;Invitation[]&gt;</code></a></p>
+
+<p><a href="#inviteuser"><code>async inviteUser(options: InviteUserOptions): Promise&lt;Invitation&gt;</code></a></p>
+
+<p><a href="#revokeinvitation"><code>async revokeInvitation(ref: string): Promise&lt;string&gt;</code></a></p>
+
+<p><a href="#listroles"><code>async listRoles(): Promise&lt;Role[]&gt;</code></a></p>
+
+<p><a href="#orgusers"><code>async orgUsers(options: OrgUsersOptions): Promise&lt;User[]&gt;</code></a></p>
+
+<p><a href="#usergroups"><code>async userGroups(): Promise&lt;Group[]&gt;</code></a></p>
+
+<p><a href="#userinfo"><code>async userInfo(): Promise&lt;FullUser&gt;</code></a></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="tsx">tsx</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

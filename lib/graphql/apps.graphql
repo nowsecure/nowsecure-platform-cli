@@ -1,0 +1,44 @@
+query appsList(
+  $refs: [UUID!]
+  $groupRefs: [UUID!]
+  $platformTypes: [PlatformEnum!]
+  $packageKeys: [String!]
+  $limit: Int
+  $offset: Int
+  $reverse: Boolean
+  $scope: ID
+  $lastAssessment: Boolean = false
+  $includeDependencies: Boolean = false
+  $includeConfig: Boolean = false
+  $includeState: Boolean = false
+  $includeReport: Boolean = false
+  $includeBuild: Boolean = false
+) {
+  auto {
+    applications(
+      refs: $refs
+      groupRefs: $groupRefs
+      platformTypes: $platformTypes
+      packageKeys: $packageKeys
+      limit: $limit
+      offset: $offset
+      reverse: $reverse
+      scope: $scope
+    ) {
+      ref
+      platformType
+      group {
+        ref
+        name
+      }
+      packageKey
+      title
+      iconURL
+      createdAt
+      archivedAt
+      latestCompleteAssessment @include(if: $lastAssessment) {
+        ...AssessmentFields
+      }
+    }
+  }
+}

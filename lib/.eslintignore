@@ -1,0 +1,4 @@
+/node_modules
+/lib
+/src/generated/**/*
+/tests/resources/**/*

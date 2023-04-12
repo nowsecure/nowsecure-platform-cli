@@ -1,0 +1,145 @@
+name: Build and package the NowSecure Platform CLI
+on:
+  push:
+    branches: 
+      - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  build-on-ubuntu:
+    name: Build .deb files for arm & intel
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Git History
+        run: git fetch --unshallow --filter=blob:none --tags --force
+      - name: Set Version
+        id: set-version
+        run: |
+          TAG_REGEX="^refs/tags/(v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(\\-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?)$"
+          if [[ ${{ github.ref }} =~ $TAG_REGEX ]]; then
+            echo "version=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+          else
+            echo "version=$(git describe --tags --long --match 'v*')" >> $GITHUB_OUTPUT
+          fi
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: | 
+          CLI_VERSION=${{ steps.set-version.outputs.version }} node cli/.ci/set-package-vars.js
+          CI_CD_BUILD=1 cli/.ci/package.sh
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Linux
+          path: |
+            cli/dist/deb
+
+  build-on-macos:
+    name: Build, sign and notarize .pkg files for Mac
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Git History
+        run: git fetch --unshallow --filter=blob:none --tags --force
+      - name: Set Version
+        id: set-version
+        run: |
+          TAG_REGEX="^refs/tags/(v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(\\-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?)$"
+          if [[ ${{ github.ref }} =~ $TAG_REGEX ]]; then
+            echo "version=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+          else
+            echo "version=$(git describe --tags --long --match 'v*')" >> $GITHUB_OUTPUT
+          fi
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install the Apple certificate and provisioning profile
+        env:
+          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: |
+          # create variables
+          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+          # import certificate from secrets
+          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode -o $CERTIFICATE_PATH
+
+          # create temporary keychain
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+          # import certificate to keychain
+          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+      - name: Build, sign, and notarize the installer packages
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          APPLEID: ${{ secrets.APPLEID }}
+          APPLEID_TEAM: ${{ secrets.APPLEID_TEAM }}
+          SIGNING_ID: ${{ secrets.SIGNING_ID }}
+
+        # Note: oclif requires the env var OSX_KEYCHAIN to know where the keychain is
+        run: |
+          CLI_VERSION=${{ steps.set-version.outputs.version }} node cli/.ci/set-package-vars.js
+
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $OSX_KEYCHAIN
+          OSX_KEYCHAIN=$RUNNER_TEMP/app-signing.keychain-db CI_CD_BUILD=1 cli/.ci/package.sh
+
+          node cli/.ci/notarize.js cli/dist/macos/*.pkg
+          spctl --assess -vv --type install cli/dist/macos/*.pkg
+
+      - name: Clean up keychain
+        if: ${{ always() }}
+        run: |
+          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: MacOS
+          path: |
+            cli/dist/macos
+
+  release:
+    needs:
+      - build-on-ubuntu
+      - build-on-macos
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check Tag
+        id: check-tag
+        run: |
+          TAG_REGEX="^refs/tags/(v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(\\-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?)$"
+          if [[ ${{ github.ref }} =~ $TAG_REGEX ]]; then
+            echo "version=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+            echo "release=true" >> $GITHUB_OUTPUT
+          else
+            echo "release=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Download Release Artifacts
+        if: ${{ steps.check-tag.outputs.release == 'true' }}
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+
+      - name: Create Release
+        if: ${{ steps.check-tag.outputs.release == 'true' }}
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: "artifacts/Linux/*.deb,artifacts/MacOS/*.pkg"
+          tag: ${{ steps.check-tag.outputs.version }}
+
+
+    

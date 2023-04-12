@@ -1,0 +1,28 @@
+fragment AssessmentFields on AutoAssessment {
+  ref
+  score
+  platformType
+  packageKey
+  packageVersion
+  buildVersion
+  build @include(if: $includeBuild) {
+    ...BuildFields
+  }
+  isAppstoreDownload
+  taskId
+  groupRef
+  applicationRef
+  createdAt
+  analysis @include(if: $includeState) {
+    ...AssessmentAnalysisFields
+  }
+  dependencies: _raw(
+    path: "yaap.complete.results[0].deputy.deputy.data[0].results"
+  ) @include(if: $includeDependencies)
+  config @include(if: $includeConfig)
+  report @include(if: $includeReport) {
+    findings {
+      ...FindingsFields
+    }
+  }
+}

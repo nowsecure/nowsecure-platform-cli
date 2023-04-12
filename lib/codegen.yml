@@ -1,0 +1,36 @@
+overwrite: true
+schema: "schema.graphql"
+documents: ./graphql/**/*.graphql
+generates:
+  src/generated/graphql.ts:
+    config:
+      enumsAsTypes: false
+      skipTypename: true
+      scalars:
+        ApplicationRef: string
+        CVSSScore: number
+        CVSSVector: string
+        Date: string
+        DateTime: string
+        Email: string
+        EntityDescription: string
+        EntityName: string
+        EventLogItemSortKey: string
+        FindingCheckID: string
+        HexColor: string
+        IPAddress: string
+        JSON: any
+        Long: number
+        Note: string
+        PolicyCategoryInteger: number
+        SemanticVersion: string
+        Time: string
+        URL: string
+        UUID: string
+    plugins:
+      - "typescript"
+      - "typescript-document-nodes"
+      - "typescript-operations"
+  # ./graphql.schema.json:
+  #   plugins:
+  #     - "introspection"

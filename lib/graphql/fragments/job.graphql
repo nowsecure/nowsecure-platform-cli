@@ -1,0 +1,7 @@
+fragment JobFields on AnalysisJob {
+  status
+  modifiedAt
+  isRunning
+  isComplete
+  emsg
+}

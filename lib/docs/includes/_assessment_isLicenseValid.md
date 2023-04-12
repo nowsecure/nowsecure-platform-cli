@@ -1,0 +1,5 @@
+### isLicenseValid
+
+```tsx
+interface PlatformAPI {}
+```

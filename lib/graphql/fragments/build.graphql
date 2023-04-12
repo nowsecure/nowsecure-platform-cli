@@ -1,0 +1,16 @@
+fragment BuildFields on AutoBuild {
+  ref
+  groupRef
+  digest
+  platformType
+  packageKey
+  appstoreApplicationKey
+  createdAt
+  uploadedAt
+  uploadedBy
+  title
+  version
+  iconURL
+  isAnalyzed
+  isAppstoreDownload
+}

@@ -1,0 +1,81 @@
+fragment FindingsFields on Finding {
+  kind
+  category
+  key
+  title
+  summary
+  affected
+  severity
+  impactType
+  uniqueVulnerabilityId
+  checkId
+  cvss
+  cvssVector
+  context {
+    description
+    items
+    checkId
+  }
+  check {
+    title
+    analysisType
+    context {
+      view
+      title
+      fields {
+        key
+        title
+        description
+        format
+      }
+    }
+    issue {
+      title
+      warn
+      description
+      impactSummary
+      stepsToReproduce
+      recommendation
+      regulations {
+        label
+        links {
+          title
+          url
+        }
+      }
+      category
+      cvss
+      cve
+      cvssVector
+      codeSamples {
+        syntax
+        caption
+        block
+      }
+      guidanceLinks {
+        caption
+        url
+      }
+    }
+    context {
+      view
+      title
+      fields {
+        key
+        title
+        format
+        template
+      }
+      children {
+        view
+        title
+        fields {
+          key
+          title
+          format
+          template
+        }
+      }
+    }
+  }
+}

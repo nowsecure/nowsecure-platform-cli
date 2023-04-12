@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot conversion can perform conversion 1`] = `
+Object {
+  "detector": Object {
+    "name": "NowSecure",
+    "url": "https://www.nowsecure.com/",
+    "version": "2.4.0",
+  },
+  "job": Object {
+    "correlator": "my-correlation-id",
+    "id": "12345",
+  },
+  "manifests": Object {
+    "Payload/Example.app/ExampleFramework/Info.plist": Object {
+      "name": "Payload/Example.app/ExampleFramework/Info.plist",
+      "resolved": Object {
+        "ExamplePod3": Object {
+          "package_url": "pkg:cocoapods/ExamplePod3@3.0.0",
+          "relationship": "direct",
+        },
+      },
+    },
+    "Payload/Example.app/libexample.dylib": Object {
+      "name": "Payload/Example.app/libexample.dylib",
+      "resolved": Object {
+        "libexample": Object {
+          "package_url": "pkg:generic/libexample@1.0.0",
+          "relationship": "direct",
+        },
+      },
+    },
+    "Podfile.lock": Object {
+      "name": "Podfile.lock",
+      "resolved": Object {
+        "ExamplePod1": Object {
+          "package_url": "pkg:cocoapods/ExamplePod1@1.0.0",
+          "relationship": "direct",
+        },
+        "ExamplePod2": Object {
+          "package_url": "pkg:cocoapods/ExamplePod2@2.0.0",
+          "relationship": "direct",
+        },
+      },
+    },
+  },
+  "ref": "branch-or-tag",
+  "scanned": "2022-01-01T00:00:00.000Z",
+  "sha": "7fc5849154e48c752bd5436f8ec32b2bc00e548e",
+  "version": 0,
+}
+`;

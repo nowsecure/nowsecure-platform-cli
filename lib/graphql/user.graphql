@@ -1,0 +1,20 @@
+query orgUsers($active: Boolean = true) {
+  my {
+    organization {
+      users(active: $active, limit: null) {
+        ...UserFields
+      }
+    }
+  }
+}
+
+query currentUser {
+  my {
+    user {
+      ...UserFields
+      groups {
+        ...GroupFields
+      }
+    }
+  }
+}

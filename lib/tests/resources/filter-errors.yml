@@ -1,0 +1,5 @@
+- minimum-level: not a level
+- exclude-checks:
+    - check_1
+  include-checks:
+    - check_1

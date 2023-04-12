@@ -1,0 +1,385 @@
+{
+  "platformType": "android",
+  "packageKey": "com.example.app",
+  "taskId": "1",
+  "applicationRef": "00000000-0000-0000-0000-000000000001",
+  "ref": "00000000-0000-0000-0000-000000000002",
+  "report": {
+    "findings": [
+      {
+        "kind": "static",
+        "key": "check_1",
+        "checkId": "check_1",
+        "category": "fs",
+        "title": "Check 1",
+        "summary": "critical check",
+        "affected": true,
+        "severity": "critical",
+        "impactType": "critical",
+        "context": null,
+        "uniqueVulnerabilityId": 1,
+        "cvss": 9.8,
+        "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+        "check": {
+          "issue": {
+            "title": "Check 1",
+            "description": "This is a descriptive explanation of the example check 1.",
+            "impactSummary": "This is the impact of the example check 1.",
+            "stepsToReproduce": "These are steps to reproduce the issue 1.",
+            "recommendation": "This is an example recommendation for 1.",
+            "category": "fs",
+            "cvss": 9.8,
+            "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_2",
+        "checkId": "check_2",
+        "title": "Check 2",
+        "summary": "high check",
+        "category": "network",
+        "affected": true,
+        "severity": "high",
+        "impactType": "high",
+        "context": null,
+        "uniqueVulnerabilityId": 2,
+        "cvss": 8.1,
+        "cvss_vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+        "check": {
+          "issue": {
+            "title": "Check 2",
+            "description": "This is a descriptive explanation of the example check 2.",
+            "impactSummary": "This is the impact of the example check 2.",
+            "stepsToReproduce": "These are steps to reproduce the issue 2.",
+            "recommendation": "This is an example recommendation for 2.",
+            "category": "network",
+            "cvss": 8.1,
+            "cvss_vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_3",
+        "checkId": "check_3",
+        "title": "Check 3",
+        "summary": "medium check",
+        "affected": true,
+        "severity": "medium",
+        "impactType": "medium",
+        "context": null,
+        "uniqueVulnerabilityId": 3,
+        "category": "code",
+        "cvss": 5.5,
+        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+        "check": {
+          "issue": {
+            "title": "Check 3",
+            "description": "This is a descriptive explanation of the example check 3.",
+            "impactSummary": "This is the impact of the example check 3.",
+            "stepsToReproduce": "These are steps to reproduce the issue 3.",
+            "recommendation": "This is an example recommendation for 3.",
+            "category": "code",
+            "cvss": 5.5,
+            "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_4",
+        "checkId": "check_4",
+        "title": "Check 4",
+        "summary": "low check",
+        "affected": true,
+        "severity": "low",
+        "impactType": "low",
+        "context": null,
+        "uniqueVulnerabilityId": 4,
+        "cvss": 2.2,
+        "category": "code",
+        "cvssVector": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+        "check": {
+          "issue": {
+            "title": "Check 4",
+            "description": "This is a descriptive explanation of the example check 4.",
+            "impactSummary": "This is the impact of the example check 4.",
+            "stepsToReproduce": "These are steps to reproduce the issue 4.",
+            "recommendation": "This is an example recommendation for 4.",
+            "category": "code",
+            "cvss": 2.2,
+            "cvssVector": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_5",
+        "checkId": "check_5",
+        "title": "Check 5",
+        "summary": "info check warning",
+        "affected": true,
+        "severity": "info",
+        "impactType": "info",
+        "context": null,
+        "uniqueVulnerabilityId": 5,
+        "category": "network",
+        "cvss": 0,
+        "cvssVector": null,
+        "check": {
+          "issue": {
+            "title": "Check 5",
+            "description": "This is a descriptive explanation of the example check 5.",
+            "impactSummary": "This is the impact of the example check 5.",
+            "stepsToReproduce": "These are steps to reproduce the issue 5.",
+            "recommendation": "This is an example recommendation for 5.",
+            "category": "network",
+            "cvss": 0,
+            "cvssVector": null,
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": true
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_6",
+        "checkId": "check_6",
+        "title": "Check 6",
+        "summary": "info check",
+        "affected": true,
+        "severity": "info",
+        "impactType": "info",
+        "context": null,
+        "uniqueVulnerabilityId": 6,
+        "category": "permissions",
+        "cvss": 0,
+        "cvssVector": null,
+        "check": {
+          "issue": {
+            "title": "Check 6",
+            "description": "This is a descriptive explanation of the example check 6.",
+            "impactSummary": "This is the impact of the example check 6.",
+            "stepsToReproduce": "These are steps to reproduce the issue 6.",
+            "recommendation": "This is an example recommendation for 6.",
+            "category": "permissions",
+            "cvss": 0,
+            "cvssVector": null,
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_7",
+        "checkId": "check_7",
+        "title": "Check 7",
+        "summary": "info check",
+        "affected": true,
+        "severity": "info",
+        "impactType": "info",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "check": {
+          "issue": null
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_8",
+        "checkId": "check_8",
+        "title": "Check 8",
+        "summary": "critical check",
+        "category": "code",
+        "affected": false,
+        "severity": "critical",
+        "impactType": "pass",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "cvss": 9.3,
+        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+        "check": {
+          "issue": {
+            "title": "Check 8",
+            "description": "This is a descriptive explanation of the example check 8.",
+            "impactSummary": "This is the impact of the example check 8.",
+            "stepsToReproduce": "These are steps to reproduce the issue 8.",
+            "recommendation": "This is an example recommendation for 8.",
+            "category": "code",
+            "cvss": 9.8,
+            "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_9",
+        "checkId": "check_9",
+        "title": "Check 9",
+        "summary": "high check",
+        "affected": false,
+        "severity": "high",
+        "impactType": "pass",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "cvss": 8.1,
+        "cvss_vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+        "category": "network",
+        "check": {
+          "issue": {
+            "title": "Check 9",
+            "description": "This is a descriptive explanation of the example check 9.",
+            "impactSummary": "This is the impact of the example check 9.",
+            "stepsToReproduce": "These are steps to reproduce the issue 9.",
+            "recommendation": "This is an example recommendation for 9.",
+            "category": "network",
+            "cvss": 8.1,
+            "cvss_vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_10",
+        "checkId": "check_10",
+        "title": "Check 10",
+        "summary": "medium check",
+        "affected": false,
+        "severity": "medium",
+        "impactType": "pass",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "category": "code",
+        "cvss": 5.5,
+        "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+        "check": {
+          "issue": {
+            "title": "Check 10",
+            "description": "This is a descriptive explanation of the example check 10.",
+            "impactSummary": "This is the impact of the example check 10.",
+            "stepsToReproduce": "These are steps to reproduce the issue 10.",
+            "recommendation": "This is an example recommendation for 10.",
+            "category": "code",
+            "cvss": 5.5,
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_11",
+        "checkId": "check_11",
+        "title": "Check 11",
+        "summary": "low check",
+        "affected": false,
+        "severity": "low",
+        "impactType": "pass",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "cvss": 2.2,
+        "cvssVector": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+        "category": "code",
+        "check": {
+          "issue": {
+            "title": "Check 11",
+            "description": "This is a descriptive explanation of the example check 11.",
+            "impactSummary": "This is the impact of the example check 11.",
+            "stepsToReproduce": "These are steps to reproduce the issue 11.",
+            "recommendation": "This is an example recommendation for 11.",
+            "category": "code",
+            "cvss": 2.2,
+            "cvssVector": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_12",
+        "checkId": "check_12",
+        "title": "Check 12",
+        "summary": "info check warning",
+        "affected": false,
+        "severity": "info",
+        "impactType": "pass",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "category": "network",
+        "cvss": 0,
+        "cvssVector": null,
+        "check": {
+          "issue": {
+            "title": "Check 12",
+            "description": "This is a descriptive explanation of the example check 12.",
+            "impactSummary": "This is the impact of the example check 12.",
+            "stepsToReproduce": "These are steps to reproduce the issue 12.",
+            "recommendation": "This is an example recommendation for 12.",
+            "category": "network",
+            "cvss": 0,
+            "cvssVector": null,
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": true
+          }
+        }
+      },
+      {
+        "kind": "static",
+        "key": "check_13",
+        "checkId": "check_13",
+        "title": "Check 13",
+        "summary": "info check",
+        "affected": false,
+        "severity": "info",
+        "impactType": "pass",
+        "context": null,
+        "uniqueVulnerabilityId": null,
+        "category": "permissions",
+        "cvss": 0,
+        "cvssVector": null,
+        "check": {
+          "issue": {
+            "title": "Check 13",
+            "description": "This is a descriptive explanation of the example check 13.",
+            "impactSummary": "This is the impact of the example check 13.",
+            "stepsToReproduce": "These are steps to reproduce the issue 13.",
+            "recommendation": "This is an example recommendation for 13.",
+            "category": "permissions",
+            "cvss": 0,
+            "cvssVector": null,
+            "codeSamples": [],
+            "guidanceLinks": [],
+            "warn": false
+          }
+        }
+      }
+    ]
+  }
+}

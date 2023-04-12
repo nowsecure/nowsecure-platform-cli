@@ -1,0 +1,68 @@
+query appAnalysisConfig(
+  $ref: UUID!
+  $getDefault: Boolean = true
+  $getApp: Boolean = true
+) {
+  auto {
+    defaultAnalysisConfig @include(if: $getDefault) {
+      ...DefaultAnalysisConfigFields
+    }
+    application(ref: $ref) @include(if: $getApp) {
+      ref
+      platformType
+      packageKey
+      group {
+        ref
+        name
+      }
+      analysisConfig {
+        ...AppAnalysisConfigFields
+      }
+    }
+  }
+}
+
+mutation updateAppAnalysisConfig(
+  $appRef: UUID!
+  $actions: AnalysisConfigActionsInput
+  $searchData: [AnalysisConfigSearchDataInput!]
+  $searchTerms: [AnalysisConfigSearchTermInput!]
+  $appium: AnalysisConfigAppiumRunnerInput
+  $jsScript: String
+  $dslScript: String
+  $dslScriptFilename: String
+  $xctest: AnalysisConfigXcTestRunnerInput
+) {
+  auto {
+    setApplicationAnalysisConfig(
+      appRef: $appRef
+      actions: $actions
+      searchData: $searchData
+      searchTerms: $searchTerms
+      appium: $appium
+      jsScript: $jsScript
+      dslScript: $dslScript
+      dslScriptFilename: $dslScriptFilename
+      xctest: $xctest
+    )
+  }
+}
+
+mutation resetAppAnalysisConfig($appRef: UUID!) {
+  auto {
+    setApplicationAnalysisConfig(
+      appRef: $appRef
+      actions: null
+      searchData: null
+      searchTerms: null
+      api: null
+      appium: null
+      xctest: null
+      espresso: null
+      jsScript: null
+      dslScript: null
+      dslScriptFilename: null
+      failfast: null
+    )
+  }
+}

@@ -1,0 +1,61 @@
+# The bare minimum information required to cancel an assessment
+query assessmentInfo($ref: UUID!) {
+  auto {
+    assessments(scope: "*", refs: [$ref]) {
+      ref
+      platformType
+      packageKey
+      taskId
+      groupRef
+    }
+  }
+}
+
+query assessments(
+  $groupRefs: [UUID!]
+  $platformType: PlatformEnum
+  $refs: [UUID!]
+  $limit: Int
+  $scope: ID
+  $affectedByFindingKey: String
+  $status: String
+  $since: DateTime
+  $after: DateTime
+  $before: DateTime
+  $until: DateTime
+  $reverse: Boolean
+  $includeDeleted: Boolean
+  $defaultConfig: Boolean
+  $appstoreDownload: Boolean
+  $failFast: Boolean
+  $favorite: Boolean
+  $includeDependencies: Boolean = false
+  $includeConfig: Boolean = false
+  $includeState: Boolean = false
+  $includeReport: Boolean = false
+  $includeBuild: Boolean = false
+) {
+  auto {
+    assessments(
+      groupRefs: $groupRefs
+      platformType: $platformType
+      refs: $refs
+      limit: $limit
+      scope: $scope
+      affectedByFindingKey: $affectedByFindingKey
+      status: $status
+      since: $since
+      after: $after
+      before: $before
+      until: $until
+      reverse: $reverse
+      includeDeleted: $includeDeleted
+      defaultConfig: $defaultConfig
+      appstoreDownload: $appstoreDownload
+      debugMode: $failFast
+      favorite: $favorite
+    ) {
+      ...AssessmentFields
+    }
+  }
+}

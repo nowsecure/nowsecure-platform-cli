@@ -1,0 +1,17 @@
+query userGroups {
+  my {
+    groups {
+      ...GroupFields
+    }
+  }
+}
+
+query orgGroups($active: Boolean) {
+  my {
+    organization {
+      groups(active: $active) {
+        ...GroupFields
+      }
+    }
+  }
+}

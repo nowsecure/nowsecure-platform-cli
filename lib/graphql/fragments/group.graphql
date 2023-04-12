@@ -1,0 +1,15 @@
+fragment GroupFields on AutoGroup {
+  ref
+  name
+  createdAt
+  active
+  note
+  settings {
+    key
+    value
+  }
+  currentApplicationCount
+  completedAssessmentCount
+  completedBaselineAssessmentCount
+  completedAdvancedAssessmentCount
+}

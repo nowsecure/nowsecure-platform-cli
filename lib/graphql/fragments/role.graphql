@@ -1,0 +1,12 @@
+fragment RoleFields on Role {
+  ref
+  name
+  label
+  description
+  defaultPermissions {
+    ...PermissionFields
+  }
+  permissions {
+    ...PermissionFields
+  }
+}

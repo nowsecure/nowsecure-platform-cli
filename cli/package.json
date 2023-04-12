@@ -1,0 +1,107 @@
+{
+  "name": "@nowsecure/platform-cli",
+  "version": "1.0.0",
+  "description": "NowSecure command line tool to interact with NowSecure Platform",
+  "author": "NowSecure",
+  "bin": {
+    "ns-cli": "./bin/run"
+  },
+  "homepage": "https://github.com/cosdon/nowsecure-cli",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "cosdon/nowsecure-cli",
+  "files": [
+    "/bin",
+    "/dist",
+    "!/dist/**/*.map",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@nowsecure/github-snapshot": "file:../github-snapshot",
+    "@nowsecure/platform-lib": "file:../lib",
+    "@nowsecure/sarif": "file:../sarif",
+    "@oclif/core": "^2.1.7",
+    "@oclif/plugin-autocomplete": "^2.1.1",
+    "@oclif/plugin-help": "^5.2.5",
+    "@oclif/plugin-plugins": "^2.3.2",
+    "ini": "^3.0.1",
+    "inquirer": "8.0.0",
+    "progress": "^2.0.3",
+    "yaml": "^2.2.1"
+  },
+  "devDependencies": {
+    "@electron/notarize": "^1.2.3",
+    "@oclif/test": "^2.2.10",
+    "@types/chai": "^4",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/ini": "^1.3.31",
+    "@types/inquirer": "8.2.5",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.18.3",
+    "@types/progress": "^2.0.5",
+    "@types/sarif": "^2.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "chai": "^4",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "genversion": "^3.1.1",
+    "mocha": "^9",
+    "nock": "^13.2.9",
+    "oclif": "^3",
+    "prettier": "^2.8.0",
+    "shx": "^0.3.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "typescript": "4.9.3"
+  },
+  "oclif": {
+    "bin": "ns-cli",
+    "dirname": "ns-cli",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-autocomplete"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "hello": {
+        "description": "NowSecure command line tool"
+      }
+    },
+    "macos": {
+      "identifier": "com.nowsecure.cli"
+    }
+  },
+  "pkg": {
+    "scripts": "./dist/**/*.js"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "genversion": "genversion -d --es6 --semi src/version.ts && echo \"export const commit = \\\"$(git rev-parse --short HEAD)\\\";\" >> src/version.ts",
+    "lint": "eslint . --ext .ts && prettier --check **/*.ts",
+    "clean": "shx rm -rf dist",
+    "build": "yarn run clean && yarn genversion && tsc -p tsconfig.production.json",
+    "debugbuild": "yarn run clean && yarn genversion && tsc -b --sourceMap",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "package-macos": "oclif pack macos",
+    "package-deb": "oclif pack deb",
+    "make-package": ".ci/package.sh",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md",
+    "link-deps": "yarn link @nowsecure/platform-lib @nowsecure/sarif @nowsecure/github-snapshot"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "bugs": "https://github.com/cosdon/nowsecure-cli/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts"
+}
