@@ -6,8 +6,15 @@ interface PlatformAPI {
     stream: NodeJS.ReadableStream,
     groupId?: string,
     version?: string,
+    analysisType?: AnalysisType
     config?: RequestConfig
   ): Promise<ProcessApplicationResponse>;
+}
+
+enum AnalysisType {
+  FULL = "full",
+  STATIC = "static",
+  DEPENDENCIES = "dependencies",
 }
 
 interface ProcessApplicationResponse {
@@ -38,12 +45,13 @@ interface ProcessApplicationResponse {
 
 Upload an ipa or apk file to Platform and begin an assessment.
 
-| Parameter | Description                                                                                                                 |
-| --------- | --------------------------------------------------------------------------------------------------------------------------- |
-| stream    | The application data to send to Platform                                                                                    |
-| groupId   | The application group to use for the assessment. Required if the user is a member of more than one group                    |
-| version   | Optional version string for the build. If this field is not specified the version from the application package will be used |
-| config    | [`RequestConfig`](#requestconfig). Upload progress can be monitored via the `onUploadProgress` callback.                    |
+| Parameter    | Description                                                                                                                        |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| stream       | The application data to send to Platform                                                                                           |
+| groupId      | The application group to use for the assessment. Required if the user is a member of more than one group                           |
+| version      | Optional version string for the build. If this field is not specified the version from the application package will be used        |
+| analysisType | If specified, the type of analysis to run. "static" runs a static-only analysis, "dependencies" returns the SBOM dependency graph. |
+| config       | [`RequestConfig`](#requestconfig). Upload progress can be monitored via the `onUploadProgress` callback.                           |
 
 `ProcessApplicationResponse`
 

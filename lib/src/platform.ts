@@ -57,6 +57,7 @@ import {
   updateAnalysisConfig,
   resetAnalysisConfig,
   UpdateConfigOptions,
+  AnalysisType,
 } from "./api";
 
 export interface PlatformAPI {
@@ -90,6 +91,7 @@ export interface PlatformAPI {
     stream: NodeJS.ReadableStream,
     groupId?: string,
     version?: string,
+    analysisType?: AnalysisType,
     config?: RequestConfig
   ): Promise<ProcessApplicationResponse>;
 
@@ -207,9 +209,17 @@ export class Platform implements PlatformAPI {
     stream: NodeJS.ReadableStream,
     groupId?: string,
     version?: string,
+    analysisType?: AnalysisType,
     config?: RequestConfig
   ): Promise<ProcessApplicationResponse> {
-    return processBinary(this._client, stream, groupId, version, config);
+    return processBinary(
+      this._client,
+      stream,
+      groupId,
+      version,
+      analysisType,
+      config
+    );
   }
 
   uploadBinary(

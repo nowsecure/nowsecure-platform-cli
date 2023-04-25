@@ -9,7 +9,7 @@ import { Args, Flags } from "@oclif/core";
 import { ProcessApplicationResponse } from "@nowsecure/platform-lib/lib/types";
 import { getGroupRef, BaseCommand, groupFlags } from "../../utils";
 import ProgressBar from "progress";
-import { RequestConfig } from "@nowsecure/platform-lib";
+import { AnalysisType, RequestConfig } from "@nowsecure/platform-lib";
 
 export default class ProcessBinary extends BaseCommand {
   static description = "Upload and analyze an application binary";
@@ -21,6 +21,11 @@ export default class ProcessBinary extends BaseCommand {
     "set-version": Flags.string({
       char: "v",
       summary: "Set the version of the uploaded binary",
+    }),
+    "analysis-type": Flags.string({
+      char: "t",
+      summary: "The type of analysis to perform",
+      options: Object.values(AnalysisType),
     }),
   };
   static args = {
@@ -53,6 +58,7 @@ export default class ProcessBinary extends BaseCommand {
       stream,
       groupRef,
       flags["set-version"],
+      flags["analysis-type"] as AnalysisType | undefined,
       config
     );
     this.log(
