@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
-const oclif = require('@oclif/core')
+const oclif = require("@oclif/core");
 
-oclif.run().then(require('@oclif/core/flush')).catch(require('@oclif/core/handle'))
+const flush = () => {
+  const passed = parseInt(process.env.NS_CLI_FLUSH_TIMEOUT);
+  const timeout = passed > 0 && !isNaN(passed) ? passed : 100000000;
+  require("@oclif/core/flush")(Math.min(timeout * 1000, 0x7fffffff)); // setTimeout requires signed 32 bit integer range
+};
+
+oclif.run().then(flush).catch(require("@oclif/core/handle"));

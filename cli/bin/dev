@@ -1,17 +1,23 @@
 #!/usr/bin/env node
 
-const oclif = require('@oclif/core')
+const oclif = require("@oclif/core");
 
-const path = require('path')
-const project = path.join(__dirname, '..', 'tsconfig.json')
+const path = require("path");
+const project = path.join(__dirname, "..", "tsconfig.json");
 
 // In dev mode -> use ts-node and dev plugins
-process.env.NODE_ENV = 'development'
+process.env.NODE_ENV = "development";
 
-require('ts-node').register({project})
+require("ts-node").register({ project });
 
 // In dev mode, always show stack traces
 oclif.settings.debug = true;
 
+const flush = () => {
+  const passed = parseInt(process.env.NS_CLI_FLUSH_TIMEOUT);
+  const timeout = passed > 0 && !isNaN(passed) ? passed : 100000000;
+  oclif.flush(Math.min(timeout * 1000, 0x7fffffff)); // setTimeout requires signed 32 bit integer range
+};
+
 // Start the CLI
-oclif.run().then(oclif.flush).catch(oclif.Errors.handle)
+oclif.run().then(flush).catch(oclif.Errors.handle);
