@@ -10,13 +10,35 @@ import {
   UploadApplicationResponse,
 } from "../../types/platform";
 
-function queryParams(groupId?: string, version?: string) {
+export enum AnalysisType {
+  FULL = "full",
+  STATIC = "static",
+  DEPENDENCIES = "dependencies",
+}
+
+function queryParams(
+  groupId?: string,
+  version?: string,
+  analysisType?: AnalysisType
+) {
   const args: string[] = [];
   if (groupId) {
     args.push("group=" + encodeURIComponent(groupId));
   }
   if (version) {
     args.push("version=" + encodeURIComponent(version));
+  }
+  if (analysisType) {
+    switch (analysisType) {
+      case AnalysisType.FULL:
+        break;
+      case AnalysisType.DEPENDENCIES:
+        args.push("analysisType=sbom");
+        break;
+      case AnalysisType.STATIC:
+        args.push("analysisType=static");
+        break;
+    }
   }
 
   return args.length > 0 ? "?" + args.join("&") : "";
@@ -31,9 +53,10 @@ export /*async*/ function processBinary(
   stream: NodeJS.ReadableStream,
   groupId?: string,
   version?: string,
+  analysisType?: AnalysisType,
   config?: RequestConfig
 ): Promise<ProcessApplicationResponse> {
-  const paramStr = queryParams(groupId, version);
+  const paramStr = queryParams(groupId, version, analysisType);
   return client.postStream<ProcessApplicationResponse>(
     `/build/${paramStr}`,
     stream,

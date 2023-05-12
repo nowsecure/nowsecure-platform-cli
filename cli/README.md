@@ -22,7 +22,7 @@ $ npm install -g @nowsecure/platform-cli
 $ ns-cli COMMAND
 running command...
 $ ns-cli (--version)
-@nowsecure/platform-cli/1.0.0-beta.3 darwin-x64 node-v16.19.1
+@nowsecure/platform-cli/1.0.0 darwin-x64 node-v16.19.1
 $ ns-cli --help [COMMAND]
 USAGE
   $ ns-cli COMMAND
@@ -86,7 +86,7 @@ DESCRIPTION
   Commands to manipulate applications for analysis
 ```
 
-_See code: [dist/commands/app/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0-beta.3/dist/commands/app/index.ts)_
+_See code: [dist/commands/app/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/app/index.ts)_
 
 ## `ns-cli app archive [PLATFORM] [PACKAGENAME]`
 
@@ -332,15 +332,18 @@ Upload and analyze an application binary
 ```
 USAGE
   $ ns-cli app process BINARY [--token <value>] [--graphql <value>] [--rest <value>] [--ui <value>] [--profile
-    <value>] [--config-file <value>] [--json] [-g <value>] [--group-ref <value>] [-v <value>]
+    <value>] [--config-file <value>] [--json] [-g <value>] [--group-ref <value>] [-v <value>] [-t
+    full|static|dependencies]
 
 ARGUMENTS
   BINARY  file to send to Platform
 
 FLAGS
-  -g, --group=<value>        Group name
-  -v, --set-version=<value>  Set the version of the uploaded binary
-  --group-ref=<value>        Group reference
+  -g, --group=<value>           Group name
+  -t, --analysis-type=<option>  The type of analysis to perform
+                                <options: full|static|dependencies>
+  -v, --set-version=<value>     Set the version of the uploaded binary
+  --group-ref=<value>           Group reference
 
 GLOBAL FLAGS
   --config-file=<value>  Path to the config file
@@ -480,7 +483,7 @@ DESCRIPTION
   Commands to retrieve assessment data
 ```
 
-_See code: [dist/commands/assessment/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0-beta.3/dist/commands/assessment/index.ts)_
+_See code: [dist/commands/assessment/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/assessment/index.ts)_
 
 ## `ns-cli assessment cancel ASSESSMENT`
 
@@ -810,7 +813,7 @@ FLAGS
   --ui=<value>           URL of the UI server
 ```
 
-_See code: [dist/commands/configure/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0-beta.3/dist/commands/configure/index.ts)_
+_See code: [dist/commands/configure/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/configure/index.ts)_
 
 ## `ns-cli help [COMMANDS]`
 
@@ -844,7 +847,7 @@ DESCRIPTION
   Commands for the user's organization
 ```
 
-_See code: [dist/commands/organization/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0-beta.3/dist/commands/organization/index.ts)_
+_See code: [dist/commands/organization/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/organization/index.ts)_
 
 ## `ns-cli organization groups`
 
@@ -1241,7 +1244,7 @@ DESCRIPTION
   Commands for users & accounts
 ```
 
-_See code: [dist/commands/user/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0-beta.3/dist/commands/user/index.ts)_
+_See code: [dist/commands/user/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/user/index.ts)_
 
 ## `ns-cli user account`
 
