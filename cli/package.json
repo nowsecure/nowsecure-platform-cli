@@ -1,6 +1,6 @@
 {
   "name": "@nowsecure/platform-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "NowSecure command line tool to interact with NowSecure Platform",
   "author": "NowSecure",
   "bin": {
