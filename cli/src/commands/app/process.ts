@@ -12,7 +12,7 @@ import ProgressBar from "progress";
 import { AnalysisType, RequestConfig } from "@nowsecure/platform-lib";
 
 export default class ProcessBinary extends BaseCommand {
-  static description = "Upload and analyze an application binary";
+  static summary = "Upload and analyze an application binary";
 
   static examples = [`<%= config.bin %> <%= command.id %> my_application.apk`];
 
@@ -20,11 +20,29 @@ export default class ProcessBinary extends BaseCommand {
     ...groupFlags,
     "set-version": Flags.string({
       char: "v",
-      summary: "Set the version of the uploaded binary",
+      summary: "Set the version of the uploaded binary.",
+      description: `Attached a custom version string to the uploaded build,
+overriding the version string contained in the package file.
+
+The custom string will be displayed in the "Version" column of the application list in Platform.`
     }),
     "analysis-type": Flags.string({
       char: "t",
-      summary: "The type of analysis to perform",
+      summary: "The type of analysis to perform.",
+      description: `"static": Perform a static analysis only.
+"dependencies": Analyze the application's library dependencies.
+"full": Run a complete assessment including dynamic analysis.
+
+If the flag is not specified a full analysis will be run.
+
+Static-only and dependency-only analyses do not attempt to decrypt encrypted binaries as 
+these analyses are intended to provide a rapid result for e.g. a CI/CD pipeline. An encrypted
+binary will fail to analyze.
+
+Please note: 
+The assessment status on NowSecure Platform UI does not reflect successful completion of
+static-only or dependencies-only analysis. The labels in the UI will be "Partial Results"
+and "Failed Dynamic Analysis" due to the lack of a dynamic analysis.`,
       options: Object.values(AnalysisType),
     }),
   };
