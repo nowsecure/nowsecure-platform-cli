@@ -91,6 +91,7 @@
     "prepack": "yarn build && oclif manifest && oclif readme",
     "package-macos": "oclif pack macos",
     "package-deb": "oclif pack deb",
+    "package-win": "oclif pack win",
     "make-package": ".ci/package.sh",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md",

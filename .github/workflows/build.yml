@@ -38,7 +38,7 @@ jobs:
         with:
           name: Linux
           path: |
-            cli/dist/deb
+            cli/tmp/artifacts
 
   build-on-macos:
     name: Build, sign and notarize .pkg files for Mac
