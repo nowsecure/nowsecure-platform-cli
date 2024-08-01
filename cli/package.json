@@ -97,7 +97,7 @@
     "link-deps": "yarn link @nowsecure/platform-lib @nowsecure/sarif @nowsecure/github-snapshot"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "bugs": "https://github.com/cosdon/nowsecure-cli/issues",
   "keywords": [

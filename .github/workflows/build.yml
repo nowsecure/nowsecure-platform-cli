@@ -29,7 +29,7 @@ jobs:
           fi
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - run: | 
           CLI_VERSION=${{ steps.set-version.outputs.version }} node cli/.ci/set-package-vars.js
           CI_CD_BUILD=1 cli/.ci/package.sh
@@ -58,7 +58,7 @@ jobs:
           fi
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
