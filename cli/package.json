@@ -6,10 +6,10 @@
   "bin": {
     "ns-cli": "./bin/run"
   },
-  "homepage": "https://github.com/cosdon/nowsecure-cli",
+  "homepage": "https://github.com/nowsecure/nowsecure-cli",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "cosdon/nowsecure-cli",
+  "repository": "nowsecure/nowsecure-cli",
   "files": [
     "/bin",
     "/dist",
@@ -100,7 +100,7 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "bugs": "https://github.com/cosdon/nowsecure-cli/issues",
+  "bugs": "https://github.com/nowsecure/nowsecure-cli/issues",
   "keywords": [
     "oclif"
   ],

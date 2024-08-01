@@ -86,7 +86,7 @@ DESCRIPTION
   Commands to manipulate applications for analysis
 ```
 
-_See code: [dist/commands/app/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.1.0/dist/commands/app/index.ts)_
+_See code: [dist/commands/app/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/app/index.ts)_
 
 ## `ns-cli app archive [PLATFORM] [PACKAGENAME]`
 
@@ -505,7 +505,7 @@ DESCRIPTION
   Commands to retrieve assessment data
 ```
 
-_See code: [dist/commands/assessment/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.1.0/dist/commands/assessment/index.ts)_
+_See code: [dist/commands/assessment/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/assessment/index.ts)_
 
 ## `ns-cli assessment cancel ASSESSMENT`
 
@@ -835,7 +835,7 @@ FLAGS
   --ui=<value>           URL of the UI server
 ```
 
-_See code: [dist/commands/configure/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.1.0/dist/commands/configure/index.ts)_
+_See code: [dist/commands/configure/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/configure/index.ts)_
 
 ## `ns-cli help [COMMANDS]`
 
@@ -869,7 +869,7 @@ DESCRIPTION
   Commands for the user's organization
 ```
 
-_See code: [dist/commands/organization/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.1.0/dist/commands/organization/index.ts)_
+_See code: [dist/commands/organization/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/organization/index.ts)_
 
 ## `ns-cli organization groups`
 
@@ -1266,7 +1266,7 @@ DESCRIPTION
   Commands for users & accounts
 ```
 
-_See code: [dist/commands/user/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.1.0/dist/commands/user/index.ts)_
+_See code: [dist/commands/user/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/user/index.ts)_
 
 ## `ns-cli user account`
 
