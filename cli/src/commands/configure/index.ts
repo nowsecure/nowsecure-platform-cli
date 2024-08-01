@@ -6,12 +6,12 @@ import { checkJWT, CliConfigFile, ConfigInput } from "../../utils";
 import inquirer, { DistinctQuestion } from "inquirer";
 
 function configPath(input: string | undefined) {
-  input = (input || "").trim() || "~/.nsclirc";
+  input = (input || "").trim() || path.join(os.homedir(), ".nsclirc");
   if (input === "~") {
     return os.homedir();
   }
   if (input.startsWith("~" + path.sep)) {
-    return os.homedir + input.substring(1);
+    return path.join(os.homedir(), input.substring(2));
   }
   return input;
 }
