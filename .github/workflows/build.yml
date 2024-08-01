@@ -31,6 +31,7 @@ jobs:
         with:
           node-version: '20'
       - run: | 
+          sudo apt update && sudo apt install p7zip-full nsis
           CLI_VERSION=${{ steps.set-version.outputs.version }} node cli/.ci/set-package-vars.js
           CI_CD_BUILD=1 cli/.ci/package.sh
       - name: Archive artifacts
