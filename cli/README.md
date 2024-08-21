@@ -22,7 +22,7 @@ $ npm install -g @nowsecure/platform-cli
 $ ns-cli COMMAND
 running command...
 $ ns-cli (--version)
-@nowsecure/platform-cli/1.0.0 darwin-x64 node-v16.19.1
+@nowsecure/platform-cli/1.1.0 linux-x64 node-v20.16.0
 $ ns-cli --help [COMMAND]
 USAGE
   $ ns-cli COMMAND
@@ -86,7 +86,7 @@ DESCRIPTION
   Commands to manipulate applications for analysis
 ```
 
-_See code: [dist/commands/app/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/app/index.ts)_
+_See code: [dist/commands/app/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/app/index.ts)_
 
 ## `ns-cli app archive [PLATFORM] [PACKAGENAME]`
 
@@ -340,9 +340,9 @@ ARGUMENTS
 
 FLAGS
   -g, --group=<value>           Group name
-  -t, --analysis-type=<option>  The type of analysis to perform
+  -t, --analysis-type=<option>  The type of analysis to perform.
                                 <options: full|static|dependencies>
-  -v, --set-version=<value>     Set the version of the uploaded binary
+  -v, --set-version=<value>     Set the version of the uploaded binary.
   --group-ref=<value>           Group reference
 
 GLOBAL FLAGS
@@ -354,11 +354,33 @@ GLOBAL FLAGS
   --token=<value>        Platform API token
   --ui=<value>           URL of the UI server
 
-DESCRIPTION
-  Upload and analyze an application binary
-
 EXAMPLES
   $ ns-cli app process my_application.apk
+
+FLAG DESCRIPTIONS
+  -t, --analysis-type=full|static|dependencies  The type of analysis to perform.
+
+    "static": Perform a static analysis only.
+    "dependencies": Analyze the application's library dependencies.
+    "full": Run a complete assessment including dynamic analysis.
+
+    If the flag is not specified a full analysis will be run.
+
+    Static-only and dependency-only analyses do not attempt to decrypt encrypted binaries as
+    these analyses are intended to provide a rapid result for e.g. a CI/CD pipeline. An encrypted
+    binary will fail to analyze.
+
+    Please note:
+    The assessment status on NowSecure Platform UI does not reflect successful completion of
+    static-only or dependencies-only analysis. The labels in the UI will be "Partial Results"
+    and "Failed Dynamic Analysis" due to the lack of a dynamic analysis.
+
+  -v, --set-version=<value>  Set the version of the uploaded binary.
+
+    Attached a custom version string to the uploaded build,
+    overriding the version string contained in the package file.
+
+    The custom string will be displayed in the "Version" column of the application list in Platform.
 ```
 
 ## `ns-cli app update [PLATFORM] [PACKAGENAME] [STDIN]`
@@ -483,7 +505,7 @@ DESCRIPTION
   Commands to retrieve assessment data
 ```
 
-_See code: [dist/commands/assessment/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/assessment/index.ts)_
+_See code: [dist/commands/assessment/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/assessment/index.ts)_
 
 ## `ns-cli assessment cancel ASSESSMENT`
 
@@ -813,7 +835,7 @@ FLAGS
   --ui=<value>           URL of the UI server
 ```
 
-_See code: [dist/commands/configure/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/configure/index.ts)_
+_See code: [dist/commands/configure/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/configure/index.ts)_
 
 ## `ns-cli help [COMMANDS]`
 
@@ -847,7 +869,7 @@ DESCRIPTION
   Commands for the user's organization
 ```
 
-_See code: [dist/commands/organization/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/organization/index.ts)_
+_See code: [dist/commands/organization/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/organization/index.ts)_
 
 ## `ns-cli organization groups`
 
@@ -1244,7 +1266,7 @@ DESCRIPTION
   Commands for users & accounts
 ```
 
-_See code: [dist/commands/user/index.ts](https://github.com/cosdon/nowsecure-cli/blob/v1.0.0/dist/commands/user/index.ts)_
+_See code: [dist/commands/user/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/user/index.ts)_
 
 ## `ns-cli user account`
 

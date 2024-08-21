@@ -31,6 +31,6 @@
     "make-package": "yarn run deps:dev && yarn run link && yarn run clean && yarn --cwd cli run link-deps && yarn --cwd cli run make-package"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   }
 }
