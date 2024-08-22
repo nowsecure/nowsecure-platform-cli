@@ -43,7 +43,7 @@ jobs:
 
   build-on-macos:
     name: Build, sign and notarize .pkg files for Mac
-    runs-on: macos-12
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v3
       - name: Get Git History
