@@ -36,7 +36,7 @@ export default class ListAssessments extends BaseCommand {
   static examples = [`<%= config.bin %> <%= command.id %>`];
 
   static flags = {
-    ...makeFilterFlags({ dependsOn: ["json", "report"] }),
+    ...makeFilterFlags({ dependsOn: ["json"] }),
     findings: Flags.boolean({
       char: "f",
       summary: "Include the findings report",
