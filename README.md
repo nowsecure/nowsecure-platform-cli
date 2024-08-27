@@ -25,8 +25,13 @@ The following is needed to use the ns-cli:
 
 ### Install
 
-1. Get binary from [Releases](https://github.com/nowsecure/nowsecure-platform-cli/releases)
-2. Right click the .pkg file and select `run`.
+The NowSecure CLI currently supports macOS, Debian based Linux distributions (Ubuntu), and Microsoft Windows (beta).  In order to use:
+
+1. Navigate to the  [Releases](https://github.com/nowsecure/nowsecure-platform-cli/releases) page and download the appropriate binary for your operating system/architecture (32 or 64bit).
+2. Install based on your operating system:
+   1. MacOS: Right click the .pkg file and select `run`.
+   2. Linux: `sudo dpkg -i ns-cli_<VERSION>.deb`
+   3. Window: Double-click `ns-cli_<VERSION>.exe`
 
 ### Configure
 
@@ -49,6 +54,37 @@ REF                                   TITLE                                     
 0f377a8a-2b51-11eb-b2b8-snip          Strava                                      ios       com.strava.stravaride                                           TriageGroup
 dcf30d7a-2c16-11eb-80b5-snip          Facebook                                    ios       com.facebook.Facebook                                           "Cool Group"
 9d691706-3181-11eb-80b5-snip          Darksky                                     ios       com.jackadam.darksky                                            "Auto Group"
+```
+#### Windows Configuration Note
+
+In some cases, the `ns-cli configure` will return "Error: N ot a valid token" when using CTRL-V to paste a valid token into the Windows Command or Powershell Prompt.  If this occurs, paste the token into the command prompt by using right click from your mouse.  When you do this, you should see asterisks to represent the token that is being submitted.  If this does not work, we recommend manually creating the `.nsclirc` file via the steps in the following section.
+
+
+
+#### Manual Configuration of .nsclirc file
+
+The `.nsclirc` file holds the configuration for the ns-cli.  If you want to manually configure this file, it should be created in the root of the user's home directory and should be named `.nsclirc` with no extensions (.txt, .env, etc).  The contents of this file should be configured as follows:
+
+* `[Profile]`:  The ns-cli supports multiple profiles with the default profile being aptly named `[default]`.
+* `token`: The token that you are using.
+* `graphql` (optional): The graphql API endpoint that will be used.  This parameter is optional if you are using the default, https://api.nowsecure.com.
+* `rest`: (optional): The rest API endpoint that will be used.  This parameter is optional if you are using the default, https://lab-api.nowsecure.com.
+* `ui`: (optional): The URL to the UI that will be used.  THis parameter is optional if you are using the default, https://app.nowsecure.com
+
+Example of an .nsclirc file supporting a single profile using the default endpoints: 
+
+```
+[default]
+token=eyJhbGciOiJFUzUxMiIsInR5cCI6IkpXVCJ9.eyTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenwC
+```
+Example of an .nsclirc file supporting a single profile using single tenant endpoints:
+
+```
+[default]
+token=eyJhbGciOiJFUzUxMiIsInR5cCI6IkpXVCJ9.eyTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenTokenwC
+graphql=https://api.st1.nowsecure.com
+rest=https://lab-api.st1.nowsecure.com
+ui=https://rainier.st1.nowsecure.com
 ```
 
 ### Usage
