@@ -25,7 +25,7 @@ The following is needed to use the ns-cli:
 
 ### Install
 
-The NowSecure CLI currently supports macOS, Debian based Linux distributions (Ubuntu), and Microsoft Windows (beta).  In order to use:
+The NowSecure CLI currently supports macOS, Debian based Linux distributions (Ubuntu), and Microsoft Windows (beta).  Below are the steps to install on each operating system:
 
 1. Navigate to the  [Releases](https://github.com/nowsecure/nowsecure-platform-cli/releases) page and download the appropriate binary for your operating system/architecture (32 or 64bit).
 2. Install based on your operating system:
@@ -40,9 +40,9 @@ The NowSecure CLI currently supports macOS, Debian based Linux distributions (Ub
 
    **Note:** Most users will only need to use the default profile.  
 3. The next prompt will ask you to enter the Platform API token that you will be using.  Paste this into the field provided  and hit enter.
-4. The next prompt will ask you to enter the Graphql endpoint for the NowSecure Platform.  You can just hit enter if you are using the CLI to interact with the default production instance of NowSecure Platform.  If you are using a single tenant deployment of NowSecure Platform, you will need to enter the URL of your Graphql endpoint.  This URL will be in the format of `api.<tenant>.nowsecure.com`.
-5. The next prompt will ask you to enter the REST endpoint for the NowSecure Platform.  You can just hit enter if you are using the CLI to interact with the default production instance of NowSecure Platform.  If you are using a single tenant deployment of NowSecure Platform, you will need to enter the URL of your REST endpoint.  This URL will be in the format of `lab-api.<tenant>.nowsecure.com`.
-6. The next prompt and final will ask you to enter the UI Server for the NowSecure platform.  You can just hit enter if you are using the CLI to interact with the default production instance of NowSecure Platform.  If you are using a single tenant deployment of NowSecure Platform, you will need to enter the URL of your UI Server.  This URL will be in the format of `app.<tenant>.nowsecure.com`.
+4. The next prompt will ask you to enter the Graphql endpoint for NowSecure Platform.  You can just hit enter if you are using the CLI to interact with the default production instance of NowSecure Platform.  If you are using a single tenant deployment of NowSecure Platform, you will need to enter the URL of your Graphql endpoint.  This URL will be in the format of `api.<tenant>.nowsecure.com`.
+5. The next prompt will ask you to enter the REST endpoint for NowSecure Platform.  You can just hit enter if you are using the CLI to interact with the default production instance of NowSecure Platform.  If you are using a single tenant deployment of NowSecure Platform, you will need to enter the URL of your REST endpoint.  This URL will be in the format of `lab-api.<tenant>.nowsecure.com`.
+6. The next prompt and final will ask you to enter the UI Server for NowSecure platform.  You can just hit enter if you are using the CLI to interact with the default production instance of NowSecure Platform.  If you are using a single tenant deployment of NowSecure Platform, you will need to enter the URL of your UI Server.  This URL will be in the format of `app.<tenant>.nowsecure.com`.
 
 Once done, verify that the CLI functions as expected by running `ns-cli app list`.  A listing of the apps in your platform account will be displayed.  If desired, you can run `ns-cli app list --json` to return the results in json format.  Example:
 
