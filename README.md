@@ -151,7 +151,9 @@ You can use the `--help` option to get more details on each of the options above
 
 #### autocomplete
 
-Running `ns-cli autocomplete` will provide details on how to integrate the ns-cli into your `.zshrc` to perform autocomplete actions.
+Running `ns-cli autocomplete` will provide details on how to integrate the ns-cli into your `.zshrc` to perform autocomplete actions.  
+
+**Note:** Autocomplete is not currently supported in Windows
 
 #### configure
 
