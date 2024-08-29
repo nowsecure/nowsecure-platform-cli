@@ -34,12 +34,18 @@ jobs:
           sudo apt update && sudo apt install p7zip-full nsis
           CLI_VERSION=${{ steps.set-version.outputs.version }} node cli/.ci/set-package-vars.js
           CI_CD_BUILD=1 cli/.ci/package.sh
-      - name: Archive artifacts
+      - name: Archive Linux artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Linux
           path: |
-            cli/tmp/artifacts
+            cli/tmp/artifacts/linux
+      - name: Archive Windows artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Windows
+          path: |
+            cli/tmp/artifacts/windows
 
   build-on-macos:
     name: Build, sign and notarize .pkg files for Mac
