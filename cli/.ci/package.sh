@@ -51,11 +51,13 @@ copy_lib sarif
 if [[ "$OS" == 'Darwin' ]]; then
   yarn package-macos
 else
-  mkdir -p tmp/artifacts
+  mkdir -p tmp/artifacts/linux
   yarn package-deb
-  cp dist/deb/* tmp/artifacts/
+  cp dist/deb/* tmp/artifacts/linux
+
+  mkdir -p tmp/artifacts/windows
   yarn package-win
-  cp dist/win32/* tmp/artifacts/
+  cp dist/win32/* tmp/artifacts/windows
 fi
 
 if [ -n "${LINKED}" ]; then

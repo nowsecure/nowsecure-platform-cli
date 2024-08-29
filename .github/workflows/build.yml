@@ -15,7 +15,7 @@ jobs:
     name: Build .deb files for arm & intel
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get Git History
         run: git fetch --unshallow --filter=blob:none --tags --force
       - name: Set Version
@@ -27,25 +27,31 @@ jobs:
           else
             echo "version=$(git describe --tags --long --match 'v*')" >> $GITHUB_OUTPUT
           fi
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - run: | 
           sudo apt update && sudo apt install p7zip-full nsis
           CLI_VERSION=${{ steps.set-version.outputs.version }} node cli/.ci/set-package-vars.js
           CI_CD_BUILD=1 cli/.ci/package.sh
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v3
+      - name: Archive Linux artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: Linux
           path: |
-            cli/tmp/artifacts
+            cli/tmp/artifacts/linux
+      - name: Archive Windows artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Windows
+          path: |
+            cli/tmp/artifacts/windows
 
   build-on-macos:
     name: Build, sign and notarize .pkg files for Mac
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get Git History
         run: git fetch --unshallow --filter=blob:none --tags --force
       - name: Set Version
@@ -57,7 +63,7 @@ jobs:
           else
             echo "version=$(git describe --tags --long --match 'v*')" >> $GITHUB_OUTPUT
           fi
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - name: Install the Apple certificate and provisioning profile
@@ -106,7 +112,7 @@ jobs:
           security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
 
       - name: Archive Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: MacOS
           path: |
