@@ -145,7 +145,7 @@ jobs:
         if: ${{ steps.check-tag.outputs.release == 'true' }}
         uses: ncipollo/release-action@v1.12.0
         with:
-          artifacts: "artifacts/Linux/*.deb,artifacts/MacOS/*.pkg"
+          artifacts: "artifacts/Linux/*.deb,artifacts/MacOS/*.pkg,artifacts/Windows/*.exe"
           tag: ${{ steps.check-tag.outputs.version }}
 
 

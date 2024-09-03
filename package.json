@@ -1,6 +1,6 @@
 {
   "name": "@nowsecure/platform-lib-monorepo",
-  "version": "1.2.1",
+  "version": "~/nowsecure/github/cosdon/nowsecure-platform-cli",
   "license": "MIT",
   "author": "NowSecure",
   "scripts": {
