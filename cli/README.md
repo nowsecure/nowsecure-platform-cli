@@ -22,7 +22,7 @@ $ npm install -g @nowsecure/platform-cli
 $ ns-cli COMMAND
 running command...
 $ ns-cli (--version)
-@nowsecure/platform-cli/1.1.0 linux-x64 node-v20.16.0
+@nowsecure/platform-cli/1.2.2 darwin-x64 node-v20.12.2
 $ ns-cli --help [COMMAND]
 USAGE
   $ ns-cli COMMAND
@@ -86,7 +86,7 @@ DESCRIPTION
   Commands to manipulate applications for analysis
 ```
 
-_See code: [dist/commands/app/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/app/index.ts)_
+_See code: [dist/commands/app/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.2.2/dist/commands/app/index.ts)_
 
 ## `ns-cli app archive [PLATFORM] [PACKAGENAME]`
 
@@ -505,7 +505,7 @@ DESCRIPTION
   Commands to retrieve assessment data
 ```
 
-_See code: [dist/commands/assessment/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/assessment/index.ts)_
+_See code: [dist/commands/assessment/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.2.2/dist/commands/assessment/index.ts)_
 
 ## `ns-cli assessment cancel ASSESSMENT`
 
@@ -579,11 +579,10 @@ List assessments
 ```
 USAGE
   $ ns-cli assessment list [--token <value>] [--graphql <value>] [--rest <value>] [--ui <value>] [--profile <value>]
-    [--config-file <value>] [-m critical|c|high|h|medium|m|low|l|info|i --json ] [-w  ] [-i <value>  ] [-e <value>  ]
-    [-a  ] [-f ] [--config ] [-d ] [-b ] [--group-ref <value>] [-g <value>] [-r <value>] [--platform android|ios]
-    [--limit <value>] [--scope *] [--finding <value>] [--status cancelled|completed|failed|pending] [--since <value>]
-    [--after <value>] [--before <value>] [--until <value>] [--reverse] [-d] [--baseline] [--appstore] [--fail-fast]
-    [--favorite]
+    [--config-file <value>] [-m critical|c|high|h|medium|m|low|l|info|i --json] [-w ] [-i <value> ] [-e <value> ] [-a ]
+    [-f ] [--config ] [-d ] [-b ] [--group-ref <value>] [-g <value>] [-r <value>] [--platform android|ios] [--limit
+    <value>] [--scope *] [--finding <value>] [--status cancelled|completed|failed|pending] [--since <value>] [--after
+    <value>] [--before <value>] [--until <value>] [--reverse] [-d] [--baseline] [--appstore] [--fail-fast] [--favorite]
 
 FLAGS
   -a, --all-findings           show all findings
@@ -835,7 +834,7 @@ FLAGS
   --ui=<value>           URL of the UI server
 ```
 
-_See code: [dist/commands/configure/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/configure/index.ts)_
+_See code: [dist/commands/configure/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.2.2/dist/commands/configure/index.ts)_
 
 ## `ns-cli help [COMMANDS]`
 
@@ -869,7 +868,7 @@ DESCRIPTION
   Commands for the user's organization
 ```
 
-_See code: [dist/commands/organization/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/organization/index.ts)_
+_See code: [dist/commands/organization/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.2.2/dist/commands/organization/index.ts)_
 
 ## `ns-cli organization groups`
 
@@ -1266,7 +1265,7 @@ DESCRIPTION
   Commands for users & accounts
 ```
 
-_See code: [dist/commands/user/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.1.0/dist/commands/user/index.ts)_
+_See code: [dist/commands/user/index.ts](https://github.com/nowsecure/nowsecure-cli/blob/v1.2.2/dist/commands/user/index.ts)_
 
 ## `ns-cli user account`
 
